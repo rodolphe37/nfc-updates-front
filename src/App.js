@@ -1,20 +1,15 @@
-import React, { Component } from "react";
-import { Admin, Resource, EditGuesser } from 'react-admin';
-import jsonServerProvider from "ra-data-json-server";
-import { UserList } from './users';
-import { EditList, UsersEdit, UserCreate } from './EditUsers';
+import React from 'react';
+import { Admin, Resource } from 'react-admin';
+import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
+import { UsersList, UsersEdit, UserCreate } from './components/users';
 
+const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
-const dataProvider = jsonServerProvider("http://localhost:5000");
+const App = () => (
+  <Admin dataProvider={dataProvider}>
+    <Resource name="users" list={UsersList} edit={UsersEdit} create={UserCreate} icon={UserIcon} />
+  </Admin>
+);
 
-class App extends Component {
-  render() {
-    return (
-      <Admin dataProvider={dataProvider}>
-        <Resource name="users" list={EditList} edit={UsersEdit} create={UserCreate} icon={UserIcon}/>
-      </Admin>
-    );
-  }
-}
 export default App;
