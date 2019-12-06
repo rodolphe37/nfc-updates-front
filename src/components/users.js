@@ -4,7 +4,7 @@ import {
   Filter, List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
   SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Edit,
+  SelectInput, Create, Edit, 
 } from 'react-admin';
 
 const UserTitle = ({ record }) => (
@@ -17,23 +17,23 @@ const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
-  <List {...props}>
+  <List filters={<UserFilter />} {...props}>
      {isSmall ? (
         <SimpleList
-            primaryText={record => record.title}
-            secondaryText={record => `${record.views} views`}
-            tertiaryText={record => new Date(record.published_at).toLocaleDateString()}
+          primaryText={record => record.name}
+          secondaryText={record => record.email}
+          tertiaryText={record => record.company}
         />
-    ) : (
-      <Datagrid rowClick="edit">
-        <TextField source="id" />
-        <TextField source="name" />
-        <EmailField source="email" />
-        <TextField source="company" />
-        <EditButton />
-      </Datagrid>
-        )}
-    </List>
+      ) : (
+        <Datagrid>
+          <TextField source="id" />
+          <TextField source="name" />
+          <EmailField source="email" />
+          <TextField source="company" />
+          <EditButton />
+        </Datagrid>
+          )}
+  </List>
     );
 };
 
@@ -63,15 +63,9 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput disabled source="id" />
-    <ReferenceInput source="userId" reference="users">
+     <TextInput label="Search" source="Users" alwaysOn  /> 
+      <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
       <SelectInput optionText="name" />
     </ReferenceInput>
-    <TextInput source="email" />
-    <TextInput multiline source="company" />
   </Filter>
-);
-
-export const UseList = (props) => (
-  <List filters={<UserFilter />} {...props} />
 );
