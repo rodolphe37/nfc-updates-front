@@ -1,6 +1,9 @@
 import React from 'react';
 import {
-  Filter, List, Datagrid, TextField, EditButton, EmailField, SimpleForm, TextInput, ReferenceInput, SelectInput, Create, Edit,
+  Filter, List, Datagrid,
+  TextField, EditButton, EmailField,
+  SimpleForm, TextInput, ReferenceInput,
+  SelectInput, Create, Edit,
 } from 'react-admin';
 
 const UserTitle = ({ record }) => (

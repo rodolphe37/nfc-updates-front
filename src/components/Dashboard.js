@@ -5,7 +5,10 @@ import CardHeader from '@material-ui/core/CardHeader';
 
 export default () => (
   <Card>
-    <CardHeader title="Welcome to the administration" />
-    <CardContent>Lorem ipsum sic dolor amet...</CardContent>
+    <CardHeader title="Bienvenue dans votre systeme d'adminitration" />
+    <CardContent>
+      Vous pouvez ici supprimer, modifier,
+      ou créer des nouveaux utilisateurs.
+    </CardContent>
   </Card>
 );
