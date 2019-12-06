@@ -1,6 +1,7 @@
 import React from 'react';
+import { useMediaQuery } from '@material-ui/core';
 import {
-  Filter, List, Datagrid,
+  Filter, List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
   SimpleForm, TextInput, ReferenceInput,
   SelectInput, Create, Edit,
@@ -13,17 +14,28 @@ const UserTitle = ({ record }) => (
   </span>
 );
 
-export const UsersList = (props) => (
+export const UsersList = (props) => {
+  const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
+    return (
   <List {...props}>
-    <Datagrid rowClick="edit">
-      <TextField source="id" />
-      <TextField source="name" />
-      <EmailField source="email" />
-      <TextField source="company" />
-      <EditButton />
-    </Datagrid>
-  </List>
-);
+     {isSmall ? (
+        <SimpleList
+            primaryText={record => record.title}
+            secondaryText={record => `${record.views} views`}
+            tertiaryText={record => new Date(record.published_at).toLocaleDateString()}
+        />
+    ) : (
+      <Datagrid rowClick="edit">
+        <TextField source="id" />
+        <TextField source="name" />
+        <EmailField source="email" />
+        <TextField source="company" />
+        <EditButton />
+      </Datagrid>
+        )}
+    </List>
+    );
+};
 
 export const UsersEdit = (props) => (
   <Edit title={<UserTitle />} {...props}>
