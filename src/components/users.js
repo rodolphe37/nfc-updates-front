@@ -18,21 +18,23 @@ export const UsersList = (props) => {
   const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
   <List filters={<UserFilter />} {...props}>
-     {isSmall ? (
-        <SimpleList
-          primaryText={record => record.name}
-          secondaryText={record => record.email}
-          tertiaryText={record => record.company}
-        />
-      ) : (
-        <Datagrid>
-          <TextField source="id" />
-          <TextField source="name" />
-          <EmailField source="email" />
-          <TextField source="company" />
-          <EditButton />
-        </Datagrid>
-          )}
+     {isSmall
+        ? (
+          <SimpleList
+            primaryText={record => record.name}
+            secondaryText={record => record.email}
+            tertiaryText={record => record.company}
+          />
+        ) : (
+          <Datagrid>
+            <TextField source="id" />
+            <TextField source="name" />
+            <EmailField source="email" />
+            <TextField source="phone" />
+            <TextField source="company" />
+            <EditButton />
+          </Datagrid>
+        )}
   </List>
     );
 };
@@ -63,9 +65,9 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-     <TextInput label="Search" source="Users" alwaysOn  /> 
-      <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
-      <SelectInput optionText="name" />
+    <TextInput label="Search" source="users" alwaysOn  /> 
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
+    <SelectInput optionText="name" />
     </ReferenceInput>
   </Filter>
 );

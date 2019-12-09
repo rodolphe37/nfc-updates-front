@@ -17,7 +17,7 @@ export default {
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
-            total: parseInt(headers.get('Content-Range').split('/').pop(), 10),
+            total: parseInt(headers.get('X-Total-Count').split('/').pop(), 10),
         }));
     },
 
@@ -49,7 +49,7 @@ export default {
 
         return httpClient(url).then(({ headers, json }) => ({
             data: json,
-            total: parseInt(headers.get('content-range').split('/').pop(), 10),
+            total: parseInt(headers.get('X-Total-Count').split('/').pop(), 10),
         }));
     },
 
