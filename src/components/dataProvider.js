@@ -1,8 +1,18 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
+//import simpleRestProvider from 'ra-data-simple-rest';
 
 const apiUrl = process.env.REACT_APP_API_URL;
-const httpClient = fetchUtils.fetchJson;
+const httpClient = (url, options = {}) => {
+    options.user = {
+        authenticated: true,
+        token: 'SRTRDFVESGNJYTUKTYTHRG'
+    }
+    return fetchUtils.fetchJson(url, options);
+}
+//const dataProvider = simpleRestProvider(apiUrl, httpClient);
+
+//const httpClient = fetchUtils.fetchJson;
 
 export default {
     getList: (resource, params) => {
