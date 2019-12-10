@@ -5,9 +5,9 @@ import UserIcon from '@material-ui/icons/Group';
 import { UsersList, UsersEdit, UserCreate } from './components/users';
 import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
-import dataProvider from './components/dataProvider';
+//import dataProvider from './components/dataProvider';
 
-//const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
+const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 const App = () => (
   <Admin dashboard={Dashboard} authProvider={authProvider} dataProvider={dataProvider} >

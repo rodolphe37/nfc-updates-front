@@ -4,8 +4,10 @@ import {
   Filter, List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
   SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Edit, 
+  SelectInput, Create, Edit, Pagination,
 } from 'react-admin';
+
+const UsersPagination = props => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
 
 const UserTitle = ({ record }) => (
   <span>
@@ -17,7 +19,7 @@ const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
-  <List filters={<UserFilter />} {...props}>
+  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />}>
      {isSmall
         ? (
           <SimpleList
@@ -42,11 +44,11 @@ export const UsersList = (props) => {
 export const UsersEdit = (props) => (
   <Edit title={<UserTitle />} {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
       <ReferenceInput source="userId" reference="users">
         <SelectInput optionText="name" />
       </ReferenceInput>
       <TextInput source="email" />
+      <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Edit>
@@ -55,9 +57,9 @@ export const UsersEdit = (props) => (
 export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="email" />
+      <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>

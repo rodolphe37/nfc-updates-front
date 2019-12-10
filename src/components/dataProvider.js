@@ -1,7 +1,9 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
+//import simpleRestProvider from 'ra-data-simple-rest';
 
 const apiUrl = process.env.REACT_APP_API_URL;
+
 const httpClient = fetchUtils.fetchJson;
 
 export default {
