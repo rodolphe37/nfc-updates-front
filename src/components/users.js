@@ -44,10 +44,9 @@ export const UsersList = (props) => {
 export const UsersEdit = (props) => (
   <Edit title={<UserTitle />} {...props}>
     <SimpleForm>
-      <ReferenceInput source="userId" reference="users">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
+      <TextInput source="name" />
       <TextInput source="email" />
+      <TextInput source="phone" />
       <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
@@ -59,6 +58,7 @@ export const UserCreate = (props) => (
     <SimpleForm>
       <TextInput source="name" />
       <TextInput source="email" />
+      <TextInput source="phone" />
       <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
@@ -67,7 +67,7 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="users" alwaysOn  /> 
+    <TextInput label="Search" source="userId" alwaysOn  /> 
     <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
     <SelectInput optionText="name" />
     </ReferenceInput>
