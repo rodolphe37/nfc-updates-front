@@ -3,11 +3,11 @@ import { useMediaQuery } from '@material-ui/core';
 import {
   Filter, List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
-  SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Edit, Pagination,
+  SimpleForm, TextInput, ReferenceInput, ReferenceField,
+  SelectInput, Create, Edit,
 } from 'react-admin';
 
-const UsersPagination = props => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
+//const UsersPagination = props => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
 
 const UserTitle = ({ record }) => (
   <span>
@@ -19,7 +19,8 @@ const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
-  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />}>
+  <List filters={<UserFilter />} {...props}
+  title="Admin NFC updates">
      {isSmall
         ? (
           <SimpleList
@@ -30,7 +31,9 @@ export const UsersList = (props) => {
         ) : (
           <Datagrid>
             <TextField source="id" />
-            <TextField source="name" />
+            <ReferenceField source="userId" reference="users">
+              <TextField source="name" />
+            </ReferenceField>
             <EmailField source="email" />
             <TextField source="phone" />
             <TextField source="company" />
@@ -67,9 +70,9 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="userId" alwaysOn  /> 
+    <TextInput label="Search" source="q" alwaysOn />
     <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
-    <SelectInput optionText="name" />
+        <SelectInput optionText="name" />
     </ReferenceInput>
   </Filter>
 );

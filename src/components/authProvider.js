@@ -6,7 +6,7 @@ import {
     AUTH_CHECK,
 } from 'react-admin'; // eslint-disable-line import/no-unresolved
 
-// Authenticatd by default
+// Authenticated by default
 export default (type, params) => {
     if (type === AUTH_LOGIN) {
         const { username, password } = params;
