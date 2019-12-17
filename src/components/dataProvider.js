@@ -4,7 +4,9 @@ import { stringify } from 'query-string';
 
 const apiUrl = process.env.REACT_APP_API_URL;
 
+
 const httpClient = fetchUtils.fetchJson;
+
 
 export default {
     getList: (resource, params) => {
