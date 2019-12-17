@@ -1,7 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import {SimpleForm, TextInput, Edit } from 'react-admin';
+import { SimpleForm, TextInput, Edit } from 'react-admin';
 import { UserTitle } from './users';
 import ModalPage from './ModalPage';
 
@@ -20,7 +20,7 @@ export default function SwipeableTemporaryDrawer(props) {
     right: true,
   });
 
-  const toggleDrawer = (side, open) => event => {
+  const toggleDrawer = (side, open) => (event) => {
     if (event && event.type === 'keydown' && (event.key === 'Tab' || event.key === 'Shift')) {
       return;
     }
@@ -28,7 +28,7 @@ export default function SwipeableTemporaryDrawer(props) {
     setState({ ...state, [side]: open });
   };
 
-  const sideList = side => (
+  const sideList = (side) => (
     <div
       className={classes.list}
       // role="Edition"
@@ -36,14 +36,14 @@ export default function SwipeableTemporaryDrawer(props) {
       onKeyDown={toggleDrawer(side, false)}
     >
       <Edit title={<UserTitle />} {...props}>
-    <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="email" />
-      <TextInput source="phone" />
-      <ModalPage label="Choose your password" source="password" disableEnforceFocus />
-      <TextInput multiline source="company" />
-    </SimpleForm>
-  </Edit>
+        <SimpleForm>
+          <TextInput source="name" />
+          <TextInput source="email" />
+          <TextInput source="phone" />
+          <ModalPage label="Choose your password" source="password" disableEnforceFocus />
+          <TextInput multiline source="company" />
+        </SimpleForm>
+      </Edit>
     </div>
   );
 

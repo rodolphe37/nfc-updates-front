@@ -9,18 +9,18 @@ import PersistentDrawerRight from './components/PersistentDrawerRight';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
-const Administrateur = (props) => ( 
-  <Admin 
-    dashboard={Dashboard} 
-    authProvider={authProvider} 
-    dataProvider={dataProvider} 
-    >
-    <Resource 
-    name="users" 
-    list={UsersList} 
-    edit={PersistentDrawerRight} 
-    create={UserCreate} 
-    icon={UserIcon} 
+const Administrateur = (props) => (
+  <Admin
+    dashboard={Dashboard}
+    authProvider={authProvider}
+    dataProvider={dataProvider}
+  >
+    <Resource
+      name="users"
+      list={UsersList}
+      edit={PersistentDrawerRight}
+      create={UserCreate}
+      icon={UserIcon}
     />
   </Admin>
 );
