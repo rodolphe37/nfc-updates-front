@@ -4,7 +4,7 @@ import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { Button } from '@material-ui/core';
-import FormDialog from './choosePassword';
+import ChoosePassword from './ChoosePassword';
 
 const useStyles = makeStyles(theme => ({
   modal: {
@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function TransitionsModal() {
+export default function ModalPage() {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -50,7 +50,7 @@ export default function TransitionsModal() {
         }}
       >
         <Fade in={open}>
-        <FormDialog />
+        <ChoosePassword />
         </Fade>
       </Modal>
     </div>

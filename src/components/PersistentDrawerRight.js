@@ -5,14 +5,12 @@ import Drawer from '@material-ui/core/Drawer';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import {SimpleForm, TextInput, Edit } from 'react-admin';
-import { UserTitle } from './users';
-import ModalPage from './ModalPage';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import UsersEdit from './UsersEdit'
+//import Administrateur from '../Administateur';
 
 const drawerWidth = 240;
 
@@ -100,15 +98,6 @@ export default function PersistentDrawerRight(props) {
           <Typography variant="h6" noWrap className={classes.title}>
             Edit User
           </Typography>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="end"
-            onClick={handleDrawerOpen}
-            className={clsx(open && classes.hide)}
-          >
-            <MenuIcon />
-          </IconButton>
         </Toolbar>
       </AppBar>
       <main
@@ -117,7 +106,8 @@ export default function PersistentDrawerRight(props) {
         })}
       >
         <div className={classes.drawerHeader} />
-        <Typography paragraph>
+        {/* <Administrateur /> */}
+        {/* <Typography paragraph>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
           ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
           facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
@@ -139,7 +129,7 @@ export default function PersistentDrawerRight(props) {
           tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
           nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
           accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        </Typography> */}
       </main>
       <Drawer
         className={classes.drawer}
@@ -155,15 +145,7 @@ export default function PersistentDrawerRight(props) {
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
-            <Edit title={<UserTitle />} {...props}>
-                <SimpleForm>
-                <TextInput source="name" />
-                <TextInput source="email" />
-                <TextInput source="phone" />
-                <ModalPage label="Choose your password" source="password" disableEnforceFocus />
-                <TextInput multiline source="company" />
-                </SimpleForm>
-            </Edit>
+        <UsersEdit {...props} />
       </Drawer>
     </div>
   );

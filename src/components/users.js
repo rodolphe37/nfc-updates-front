@@ -19,13 +19,13 @@ export const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
     return (
-  <List /*filters={<UserFilter />}*/ {...props} pagination={<UsersPagination />}>
+  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />}>
      {isSmall
         ? (
           <SimpleList
             primaryText={record => record.name}
             secondaryText={record => record.company}
-            tertiaryText={record => record.email}
+            tertiaryText={record => record.phone}
           />
         ) : (
           <Datagrid>
@@ -41,18 +41,6 @@ export const UsersList = (props) => {
     );
 };
 
-// export const UsersEdit = (props) => (
-//   <Edit title={<UserTitle />} {...props}>
-//     <SimpleForm>
-//       <TextInput source="name" />
-//       <TextInput source="email" />
-//       <TextInput source="phone" />
-//       <TextInput source="password" />
-//       <TextInput multiline source="company" />
-//     </SimpleForm>
-//   </Edit>
-// );
-
 export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
@@ -67,7 +55,7 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="q" /*alwaysOn*/ /> 
+    <TextInput label="Search" source="q" alwaysOn /> 
     <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
     <SelectInput optionText="name" />
     </ReferenceInput>

@@ -5,14 +5,24 @@ import UserIcon from '@material-ui/icons/Group';
 import { UsersList, UserCreate } from './components/users';
 import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
-import PersistentDrawerRight from './components/TestSwipeable';
-import App from './App'
+import PersistentDrawerRight from './components/PersistentDrawerRight';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
-const Administration = (props) => (
-  
-  <App {...props} />
+const Administrateur = (props) => ( 
+  <Admin 
+    dashboard={Dashboard} 
+    authProvider={authProvider} 
+    dataProvider={dataProvider} 
+    >
+    <Resource 
+    name="users" 
+    list={UsersList} 
+    edit={PersistentDrawerRight} 
+    create={UserCreate} 
+    icon={UserIcon} 
+    />
+  </Admin>
 );
 
-export default Administration;
+export default Administrateur;
