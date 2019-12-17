@@ -6,16 +6,20 @@ import { UsersList, UserCreate } from './components/users';
 import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
 import PersistentDrawerRight from './components/PersistentDrawerRight';
+// import MyLoginPage from './MyLoginPage';
+// import MyLogoutButton from './MyLogoutButton';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 const Administrateur = (props) => (
   <Admin
     dashboard={Dashboard}
-    authProvider={authProvider}
     dataProvider={dataProvider}
+    authProvider={authProvider}
   >
     <Resource
+      // loginPage={MyLoginPage}
+      // logoutButton={MyLogoutButton}
       name="users"
       list={UsersList}
       edit={PersistentDrawerRight}
