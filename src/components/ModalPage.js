@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import { Button } from '@material-ui/core';
 import ChoosePassword from './ChoosePassword';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
@@ -50,7 +50,7 @@ export default function ModalPage() {
         }}
       >
         <Fade in={open}>
-        <ChoosePassword />
+          <ChoosePassword />
         </Fade>
       </Modal>
     </div>
