@@ -1,8 +1,9 @@
 import React from 'react';
 
-export const UserTitle = ({ record }) => (
+const UserTitle = ({ record }) => (
   <span>
     {' '}
     {record ? `"${record.name}"` : ''}
   </span>
 );
+export default UserTitle;

@@ -6,7 +6,12 @@ import {
 } from 'react-admin';
 import UserFilter from './UserFilter';
 
-const UsersPagination = (props) => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
+const UsersPagination = (props) => (
+  <Pagination
+    rowsPerPageOptions={[5, 10, 25, 50, 100]}
+    {...props}
+  />
+);
 
 const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
