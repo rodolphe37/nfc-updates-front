@@ -11,3 +11,110 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.MuiButton-label-225 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: black;
+}
+
+.MuiTableCell-sizeSmall-1312 > a {
+  color: white !important;
+}
+
+.RaButton-smallIcon-221 {
+  font-size: 20px;
+  color: black;
+}
+
+.MuiButton-label-5869 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: black;
+}
+
+.RaButton-label-5863 {
+  padding-left: 0.5em;
+  color: black;
+}
+
+.RaButton-label-551 {
+  padding-left: 0.5em;
+  color: white;
+}
+
+.MuiButton-textPrimary-559 {
+  color: white;
+}
+
+.MuiButton-label-557 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: white;
+}
+
+.MuiFormControlLabel-root {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    margin-right: -1px;
+    vertical-align: middle;
+    -webkit-tap-highlight-color: transparent;
+    background-color: #303030;
+    width: 7%;
+    padding-top: 70px;
+    width: 102%;
+}
+
+.MuiIconButton-label {
+  width: 100%;
+  display: flex;
+  align-items: inherit;
+  justify-content: inherit;
+  margin-left: 21px;
+}
+
+.MuiSwitch-root {
+  width: 75px !important;
+  height: 38px;
+  display: inline-flex;
+  padding: 12px;
+  z-index: 0;
+  overflow: hidden;
+  position: relative;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+.RaButton-smallIcon-2575 {
+  font-size: 20px;
+  color: black;
+}
+.RaButton-label-2573 {
+  padding-left: 0.5em;
+  color: white;
+}
+.MuiButton-textPrimary-3245 {
+  color: white;
+}
+.MuiButton-textPrimary-589 {
+  color: white !important;
+}
+td.MuiTableCell-root-644.MuiTableCell-body-646.column-email.RaDatagrid-rowCell-631.MuiTableCell-sizeSmall-648 > a {
+  color: white;
+}
+a.MuiButtonBase-root-1130.MuiButton-root-1250.MuiButton-text-1252.RaButton-button-1244.MuiButton-textPrimary-1253.MuiButton-textSizeSmall-1265.MuiButton-sizeSmall-1271 {
+  color: white;
+}
+.MuiButton-label-1251 {
+  width: 100%;
+  display: inherit;
+  align-items: inherit;
+  justify-content: inherit;
+  color: white;
+}
