@@ -11,7 +11,7 @@ import { UsersList, UsersEdit, UserCreate } from './components/users';
 // import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
 // import ButtonToggleTheme from './ButtonToggleTheme';
-
+import Dashboard from './components/dashboard/Dashboard';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
@@ -36,15 +36,15 @@ const App = () => {
   // the mui theme is used in the themeProvider.
   return (
     <MuiThemeProvider theme={muiTheme}>
-      <FormControlLabel
+      {/* <FormControlLabel
         control={<Switch onChange={toggleDarkTheme} aria-label="Change Themes" />}
-      />
-      <div className="barre" />
-      <Admin theme={theme} authProvider={authProvider} dataProvider={dataProvider}>
+      /> */}
+      <Admin dashboard={Dashboard} theme={muiTheme} authProvider={authProvider} dataProvider={dataProvider}>
+        <Switch onChange={toggleDarkTheme} aria-label="Change Themes" />
         <Resource name="users" list={UsersList} edit={UsersEdit} create={UserCreate} icon={UserIcon} />
       </Admin>
     </MuiThemeProvider>
   );
 };
-
+// dashboard={Dashboard}
 export default App;

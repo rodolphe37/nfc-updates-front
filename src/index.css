@@ -59,16 +59,16 @@ code {
 }
 
 .MuiFormControlLabel-root {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    margin-right: -1px;
-    vertical-align: middle;
-    -webkit-tap-highlight-color: transparent;
-    background-color: #303030;
-    width: 7%;
-    padding-top: 70px;
-    width: 102%;
+  padding-top: 2px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  margin-left: -11px;
+  margin-right: 16px;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  height: 38px;
+  margin-top: 46px;
 }
 
 .MuiIconButton-label {
@@ -90,7 +90,21 @@ code {
   box-sizing: border-box;
   flex-shrink: 0;
   vertical-align: middle;
+  z-index: 10 !important;
+  margin-left: 84vw !important;
 }
+
+.MuiSwitch-track {
+  opacity: 0.78;
+  border-radius: 7px;
+  background-color: #000;
+}
+
+.MuiSwitch-colorSecondary.Mui-checked + .MuiSwitch-track {
+  background-color: #000000 !important;
+  opacity: 0.78 !important;
+}
+    
 .RaButton-smallIcon-2575 {
   font-size: 20px;
   color: black;
@@ -105,16 +119,9 @@ code {
 .MuiButton-textPrimary-589 {
   color: white !important;
 }
-td.MuiTableCell-root-644.MuiTableCell-body-646.column-email.RaDatagrid-rowCell-631.MuiTableCell-sizeSmall-648 > a {
+td.MuiTableCell-root.MuiTableCell-body.column-email.RaDatagrid-rowCell.MuiTableCell-sizeSmall > a {
   color: white;
 }
-a.MuiButtonBase-root-1130.MuiButton-root-1250.MuiButton-text-1252.RaButton-button-1244.MuiButton-textPrimary-1253.MuiButton-textSizeSmall-1265.MuiButton-sizeSmall-1271 {
-  color: white;
-}
-.MuiButton-label-1251 {
-  width: 100%;
-  display: inherit;
-  align-items: inherit;
-  justify-content: inherit;
+a.MuiButtonBase-root.MuiButton-root.MuiButton-text.RaButton-button.MuiButton-textPrimary.MuiButton-textSizeSmall.MuiButton-sizeSmall {
   color: white;
 }
