@@ -8,6 +8,7 @@
     "chartist": "^0.11.4",
     "classnames": "^2.2.6",
     "prop-types": "^15.7.2",
+    "query-string": "^6.9.0",
     "ra-data-json-server": "^3.0.2",
     "ra-data-simple-rest": "^3.0.3",
     "react": "^16.12.0",
