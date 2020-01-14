@@ -6,21 +6,30 @@ import { UsersList, UserCreate, UserFilter } from './components/users';
 import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
 import PersistentDrawerRight from './components/PersistentDrawerRight';
+import DeleteButtonWithConfirmation from './components/DeleteButtonWithConfirmation';
+import myTheme from './components/CustomTheme';
+import NotFound from './components/NotFound';
+
+
 
 // import MyLoginPage from './MyLoginPage';
 // import MyLogoutButton from './MyLogoutButton';
+
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 const Administrateur = (props) => (
   <Admin
+    theme={myTheme}
     dashboard={Dashboard}
     dataProvider={dataProvider}
     authProvider={authProvider}
-  >
+    catchAll={NotFound}
+    >
     <Resource
       // loginPage={MyLoginPage}
       // logoutButton={MyLogoutButton}
+      delete={DeleteButtonWithConfirmation}
       name="users"
       filter={UserFilter}
       list={UsersList}

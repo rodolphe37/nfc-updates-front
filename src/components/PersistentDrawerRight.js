@@ -10,6 +10,7 @@ import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import UsersEdit from './UsersEdit'
+import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 //import Administrateur from '../Administateur';
 
 const drawerWidth = 240;
@@ -145,6 +146,7 @@ export default function PersistentDrawerRight(props) {
             {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
           </IconButton>
         </div>
+        <DeleteButtonWithConfirmation />
         <UsersEdit {...props} />
       </Drawer>
     </div>
