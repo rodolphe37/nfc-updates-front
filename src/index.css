@@ -76,11 +76,10 @@ code {
   display: flex;
   align-items: inherit;
   justify-content: inherit;
-  margin-left: 21px;
 }
 
 .MuiSwitch-root {
-  width: 75px !important;
+  width: 58px !important;
   height: 38px;
   display: inline-flex;
   padding: 12px;
