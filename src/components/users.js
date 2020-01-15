@@ -7,7 +7,12 @@ import {
   SelectInput, Create, Edit, Pagination,
 } from 'react-admin';
 
-const UsersPagination = props => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
+const UsersPagination = (props) => (
+  <Pagination
+    rowsPerPageOptions={[5, 10, 25, 50, 100]}
+    {...props}
+  />
+);
 
 const UserTitle = ({ record }) => (
   <span>
@@ -17,15 +22,15 @@ const UserTitle = ({ record }) => (
 );
 
 export const UsersList = (props) => {
-  const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
-    return (
-  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />}>
-     {isSmall
+  const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  return (
+    <List {...props} pagination={<UsersPagination />}>
+      {isSmall
         ? (
           <SimpleList
-            primaryText={record => record.name}
-            secondaryText={record => record.email}
-            tertiaryText={record => record.company}
+            primaryText={(record) => record.name}
+            secondaryText={(record) => record.email}
+            tertiaryText={(record) => record.company}
           />
         ) : (
           <Datagrid>
@@ -37,8 +42,8 @@ export const UsersList = (props) => {
             <EditButton />
           </Datagrid>
         )}
-  </List>
-    );
+    </List>
+  );
 };
 
 export const UsersEdit = (props) => (
@@ -67,9 +72,9 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput label="Search" source="userId" alwaysOn  /> 
+    <TextInput label="Search" source="userId" alwaysOn />
     <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
-    <SelectInput optionText="name" />
+      <SelectInput optionText="name" />
     </ReferenceInput>
   </Filter>
 );
