@@ -20,7 +20,7 @@ export const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />} >
+  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />} delete={<DeleteButtonWithConfirmation/>} >
       {isSmall
         ? (
           <SimpleList

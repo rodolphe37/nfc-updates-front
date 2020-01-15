@@ -7,7 +7,6 @@ import Dashboard from './components/Dashboard';
 import authProvider from './components/authProvider';
 import PersistentDrawerRight from './components/PersistentDrawerRight';
 import DeleteButtonWithConfirmation from './components/DeleteButtonWithConfirmation';
-import myTheme from './components/CustomTheme';
 import NotFound from './components/NotFound';
 
 
@@ -20,7 +19,6 @@ const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 const Administrateur = (props) => (
   <Admin
-    theme={myTheme}
     dashboard={Dashboard}
     dataProvider={dataProvider}
     authProvider={authProvider}
