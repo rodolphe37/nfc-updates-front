@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+import React from 'react';
+import Administrateur from './Administateur';
+
+const App = (props) => (
+  <Administrateur {...props} />
+);
+=======
 import React, { useState } from 'react';
 import { Admin, Resource } from 'react-admin';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
@@ -52,5 +60,6 @@ const App = () => {
     </MuiThemeProvider>
   );
 };
+>>>>>>> dev
 
 export default App;
