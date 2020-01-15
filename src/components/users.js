@@ -1,7 +1,18 @@
 import React from 'react';
+import { useMediaQuery } from '@material-ui/core';
 import {
-  Filter, List, Datagrid, TextField, EditButton, EmailField, SimpleForm, TextInput, ReferenceInput, SelectInput, Create, Edit,
+  Filter, List, SimpleList, Datagrid,
+  TextField, EditButton, EmailField,
+  SimpleForm, TextInput, ReferenceInput,
+  SelectInput, Create, Edit, Pagination,
 } from 'react-admin';
+
+const UsersPagination = (props) => (
+  <Pagination
+    rowsPerPageOptions={[5, 10, 25, 50, 100]}
+    {...props}
+  />
+);
 
 const UserTitle = ({ record }) => (
   <span>
@@ -10,26 +21,38 @@ const UserTitle = ({ record }) => (
   </span>
 );
 
-export const UsersList = (props) => (
-  <List {...props}>
-    <Datagrid rowClick="edit">
-      <TextField source="id" />
-      <TextField source="name" />
-      <EmailField source="email" />
-      <TextField source="company" />
-      <EditButton />
-    </Datagrid>
-  </List>
-);
+export const UsersList = (props) => {
+  const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  return (
+    <List {...props} pagination={<UsersPagination />}>
+      {isSmall
+        ? (
+          <SimpleList
+            primaryText={(record) => record.name}
+            secondaryText={(record) => record.email}
+            tertiaryText={(record) => record.company}
+          />
+        ) : (
+          <Datagrid>
+            <TextField source="id" />
+            <TextField source="name" />
+            <EmailField source="email" />
+            <TextField source="phone" />
+            <TextField source="company" />
+            <EditButton />
+          </Datagrid>
+        )}
+    </List>
+  );
+};
 
 export const UsersEdit = (props) => (
   <Edit title={<UserTitle />} {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
-      <ReferenceInput source="userId" reference="users">
-        <SelectInput optionText="name" />
-      </ReferenceInput>
+      <TextInput source="name" />
       <TextInput source="email" />
+      <TextInput source="phone" />
+      <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Edit>
@@ -38,9 +61,10 @@ export const UsersEdit = (props) => (
 export const UserCreate = (props) => (
   <Create {...props}>
     <SimpleForm>
-      <TextInput disabled source="id" />
       <TextInput source="name" />
       <TextInput source="email" />
+      <TextInput source="phone" />
+      <TextInput source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>
@@ -48,15 +72,9 @@ export const UserCreate = (props) => (
 
 export const UserFilter = (props) => (
   <Filter {...props}>
-    <TextInput disabled source="id" />
-    <ReferenceInput source="userId" reference="users">
+    <TextInput label="Search" source="userId" alwaysOn />
+    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
       <SelectInput optionText="name" />
     </ReferenceInput>
-    <TextInput source="email" />
-    <TextInput multiline source="company" />
   </Filter>
-);
-
-export const UseList = (props) => (
-  <List filters={<UserFilter />} {...props} />
 );
