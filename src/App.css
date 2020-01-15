@@ -21,3 +21,8 @@
   color: #09d3ac;
 }
 
+.MuiAppBar {
+  color: #fff;
+  background-color: #0079f5 !important;
+}
+
