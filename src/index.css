@@ -11,14 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.MuiButton-label-225 {
+.MuiButton-label-2051 {
   width: 100%;
   display: inherit;
   align-items: inherit;
   justify-content: inherit;
-  color: black;
+  color: wheat !important;
 }
-
 .MuiTableCell-sizeSmall-1312 > a {
   color: white !important;
 }
