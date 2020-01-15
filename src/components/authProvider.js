@@ -4,12 +4,8 @@ import {
   AUTH_LOGOUT,
   AUTH_ERROR,
   AUTH_CHECK,
-<<<<<<< HEAD
 } from 'react-admin';
 // eslint-disable-line import/no-unresolved
-=======
-} from 'react-admin'; // eslint-disable-line import/no-unresolved
->>>>>>> dev
 
 // Authenticatd by default
 export default (type, params) => {
@@ -53,9 +49,5 @@ export default (type, params) => {
     const role = localStorage.getItem('role');
     return Promise.resolve(role);
   }
-<<<<<<< HEAD
-=======
-
->>>>>>> dev
   return Promise.reject('Unknown method');
 };
