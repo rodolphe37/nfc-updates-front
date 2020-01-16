@@ -12,8 +12,8 @@ import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
-
-import { Button, SimpleForm, TextInput } from 'react-admin';
+import FormControlled from './FormControlled';
+import { Button } from 'react-admin';
 
 const styles = (theme) => ({
   deleteButton: {
@@ -31,7 +31,8 @@ const styles = (theme) => ({
 class DeleteButtonWithConfirmation extends Component {
   state = {
     showDialog: false,
-    value:null
+    value:''
+
   };
 
   handleClick = () => {
@@ -66,12 +67,13 @@ class DeleteButtonWithConfirmation extends Component {
           <DialogTitle>Suppression</DialogTitle>
           <DialogContent>
             <div>
-                Cette suppression sera définitive.
+              Cette suppression sera définitive.
+            </div>
+            <div>
+              Entrer le nom de l'utilisateur pour confirmer.
             </div>
           </DialogContent>
-          <SimpleForm>
-          <TextInput source="name" required value='' onsubmit={this.handleDelete}/>
-          </SimpleForm>
+          <FormControlled />
           <DialogActions>
             <Button onClick={this.handleDelete} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button">
               <ActionDelete />
