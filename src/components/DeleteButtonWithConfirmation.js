@@ -32,6 +32,7 @@ class DeleteButtonWithConfirmation extends Component {
   state = {
     showDialog: false,
     value:''
+
   };
 
   handleClick = () => {
