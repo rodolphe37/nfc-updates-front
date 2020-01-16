@@ -4,11 +4,16 @@ import {
   Filter, List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
   SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Pagination
+  SelectInput, Create, Pagination,
 } from 'react-admin';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
-const UsersPagination = (props) => <Pagination rowsPerPageOptions={[5, 10, 25, 50, 100]} {...props} />;
+const UsersPagination = (props) => (
+  <Pagination
+    rowsPerPageOptions={[5, 10, 25, 50, 100]}
+    {...props}
+  />
+);
 
 export const UserTitle = ({ record }) => (
   <span>
@@ -20,7 +25,7 @@ export const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-  <List filters={<UserFilter />} {...props} pagination={<UsersPagination />} delete={<DeleteButtonWithConfirmation/>} >
+    <List {...props} pagination={<UsersPagination />} delete={<DeleteButtonWithConfirmation />}>
       {isSmall
         ? (
           <SimpleList
@@ -53,13 +58,4 @@ export const UserCreate = (props) => (
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>
-);
-
-export const UserFilter = (props) => (
-  <Filter {...props}>
-    <TextInput label="Search" source="q" alwaysOn />
-    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
-      <SelectInput optionText="name" />
-    </ReferenceInput>
-  </Filter>
 );
