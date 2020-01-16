@@ -4,10 +4,11 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
 import Switch from '@material-ui/core/Switch';
-import { UsersList, UsersEdit, UserCreate } from './components/users';
+import { UsersList, UserCreate } from './components/users';
 import authProvider from './components/authProvider';
 import Dashboard from './components/dashboard/Dashboard';
 import NotFound from './components/NotFound';
+import UsersEdit from './components/UsersEdit';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
