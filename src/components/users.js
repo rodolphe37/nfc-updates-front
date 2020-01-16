@@ -6,6 +6,8 @@ import {
   SimpleForm, TextInput, ReferenceInput,
   SelectInput, Create, Edit, Pagination,
 } from 'react-admin';
+import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
+
 
 const UsersPagination = (props) => (
   <Pagination
@@ -40,6 +42,7 @@ export const UsersList = (props) => {
             <TextField source="phone" />
             <TextField source="company" />
             <EditButton />
+            <DeleteButtonWithConfirmation />
           </Datagrid>
         )}
     </List>

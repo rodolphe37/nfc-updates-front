@@ -7,6 +7,7 @@ import Switch from '@material-ui/core/Switch';
 import { UsersList, UsersEdit, UserCreate } from './components/users';
 import authProvider from './components/authProvider';
 import Dashboard from './components/dashboard/Dashboard';
+import NotFound from './components/NotFound';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
@@ -36,6 +37,7 @@ const App = () => {
         theme={muiTheme}
         authProvider={authProvider}
         dataProvider={dataProvider}
+        catchAll={NotFound}
       >
         <Switch
           onChange={toggleDarkTheme}
