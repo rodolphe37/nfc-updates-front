@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
 import { Admin, Resource } from 'react-admin';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {
+  MuiThemeProvider, createMuiTheme,
+} from '@material-ui/core/styles';
 import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
 import Switch from '@material-ui/core/Switch';
-import { UsersList, UsersEdit, UserCreate } from './components/users';
-import authProvider from './components/authProvider';
 import Dashboard from './components/dashboard/Dashboard';
+import authProvider from './components/authProvider';
+import { UsersList, UserCreate } from './components/users';
+import UsersEdit from './UsersEdit';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 const App = () => {
-// We keep the theme in app state
+  // We keep the theme in app state
   const [theme, setTheme] = useState({
     palette: {
       type: 'light',
