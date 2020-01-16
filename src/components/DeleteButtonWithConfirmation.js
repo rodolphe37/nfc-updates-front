@@ -66,7 +66,10 @@ class DeleteButtonWithConfirmation extends Component {
           <DialogTitle>Suppression</DialogTitle>
           <DialogContent>
             <div>
-                Cette suppression sera définitive.
+              Cette suppression sera définitive.
+            </div>
+            <div>
+              Entrer le nom de l'utilisateur pour confirmer.
             </div>
           </DialogContent>
           <FormControlled />
