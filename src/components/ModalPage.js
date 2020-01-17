@@ -6,7 +6,7 @@ import Fade from '@material-ui/core/Fade';
 import { Button } from '@material-ui/core';
 import ChoosePassword from './ChoosePassword';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
     alignItems: 'center',
@@ -46,11 +46,11 @@ export default function ModalPage() {
         closeAfterTransition
         BackdropComponent={Backdrop}
         BackdropProps={{
-          timeout: 500
+          timeout: 500,
         }}
       >
         <Fade in={open}>
-        <ChoosePassword />
+          <ChoosePassword open={open} handleClose={handleClose} />
         </Fade>
       </Modal>
     </div>

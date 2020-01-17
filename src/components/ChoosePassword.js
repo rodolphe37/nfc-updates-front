@@ -7,21 +7,11 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 
-export default function ChoosePassword() {
-  const [ setOpen ] = React.useState(false);
-
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-
-  const handleClickClose = () => {
-    setOpen(false);
-  };
-
+export default function ChoosePassword({ open, handleClose }) {
   return (
     <div>
-     
-      <Dialog open={handleClickOpen}  aria-labelledby="form-dialog-title">
+
+      <Dialog open={open} aria-labelledby="form-dialog-title">
         <DialogTitle id="form-dialog-title">Create Password</DialogTitle>
         <DialogContent>
           <DialogContentText>
@@ -45,10 +35,10 @@ export default function ChoosePassword() {
           />
         </DialogContent>
         <DialogActions>
-          <Button onClick={handleClickClose} color="primary">
+          <Button onClick={handleClose} color="primary">
             Cancel
           </Button>
-          <Button onClick={handleClickClose} color="primary">
+          <Button onClick={handleClose} color="primary">
             Save Password
           </Button>
         </DialogActions>

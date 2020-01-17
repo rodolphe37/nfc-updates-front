@@ -1,10 +1,9 @@
 import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import {
-  Filter, List, SimpleList, Datagrid,
+  List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
-  SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Pagination,
+  SimpleForm, TextInput, Create, Pagination,
 } from 'react-admin';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
