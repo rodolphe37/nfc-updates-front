@@ -4,7 +4,7 @@ import Administrateur from './Administateur';
 
 const App = () => {
   // We keep the theme in app state
-  const [theme, setTheme] = useState({
+  const [theme] = useState({
     palette: {
       type: 'light',
     },

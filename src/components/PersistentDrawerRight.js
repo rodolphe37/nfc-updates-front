@@ -1,22 +1,21 @@
 import React from 'react';
 import clsx from 'clsx';
+import { Resource } from 'react-admin';
 import {
-  makeStyles, useTheme, Theme, createStyles,
+  makeStyles, useTheme, createStyles,
 } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
+import { UsersList } from './users';
 import UsersEdit from './UsersEdit';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
 const drawerWidth = 340;
 
-const useStyles = makeStyles((theme: Theme) => createStyles({
+const useStyles = makeStyles((theme) => createStyles({
   root: {
     display: 'flex',
   },
@@ -75,23 +74,15 @@ export default function PersistentDrawerRight(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar
-        position="fixed"
-        className={clsx(classes.appBar, {
-          [classes.appBarShift]: open,
-        })}
-      >
-        <Toolbar>
-          <Typography variant="h6" noWrap className={classes.title}>
-            Edit User
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <main
         className={clsx(classes.content, {
           [classes.contentShift]: open,
         })}
       >
+        <Resource
+          name="users"
+          list={UsersList}
+        />
         <div className={classes.drawerHeader} />
       </main>
       <Drawer
