@@ -124,11 +124,6 @@ a.MuiButtonBase-root.MuiButton-root.MuiButton-text.RaButton-button.MuiButton-tex
   color: white;
 }
 
-.MuiAppBar-colorSecondary {
-  color: #fff;
-  background-color: #0079f5 !important;
-}
-
-header.MuiPaper-root.MuiPaper-elevation4-.MuiAppBar-root-.MuiAppBar-positionFixed.MuiAppBar-colorSecondary.mui-fixed {
-  background-color: #0079f5 !important;
+.MuiButton-label-757 {
+  color: wheat;
 }

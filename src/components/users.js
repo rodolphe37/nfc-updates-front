@@ -1,11 +1,11 @@
 import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import {
-  Filter, List, SimpleList, Datagrid,
+  List, SimpleList, Datagrid,
   TextField, EditButton, EmailField,
-  SimpleForm, TextInput, ReferenceInput,
-  SelectInput, Create, Edit, Pagination,
+  SimpleForm, TextInput, Create, Pagination,
 } from 'react-admin';
+import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
 const UsersPagination = (props) => (
   <Pagination
@@ -14,7 +14,7 @@ const UsersPagination = (props) => (
   />
 );
 
-const UserTitle = ({ record }) => (
+export const UserTitle = ({ record }) => (
   <span>
     {' '}
     {record ? `"${record.name}"` : ''}
@@ -24,13 +24,13 @@ const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-    <List {...props} pagination={<UsersPagination />}>
+    <List {...props} pagination={<UsersPagination />} delete={<DeleteButtonWithConfirmation />}>
       {isSmall
         ? (
           <SimpleList
             primaryText={(record) => record.name}
-            secondaryText={(record) => record.email}
-            tertiaryText={(record) => record.company}
+            secondaryText={(record) => record.company}
+            tertiaryText={(record) => record.phone}
           />
         ) : (
           <Datagrid>
@@ -40,23 +40,12 @@ export const UsersList = (props) => {
             <TextField source="phone" />
             <TextField source="company" />
             <EditButton />
+            <DeleteButtonWithConfirmation />
           </Datagrid>
         )}
     </List>
   );
 };
-
-export const UsersEdit = (props) => (
-  <Edit title={<UserTitle />} {...props}>
-    <SimpleForm>
-      <TextInput source="name" />
-      <TextInput source="email" />
-      <TextInput source="phone" />
-      <TextInput source="password" />
-      <TextInput multiline source="company" />
-    </SimpleForm>
-  </Edit>
-);
 
 export const UserCreate = (props) => (
   <Create {...props}>
@@ -68,13 +57,4 @@ export const UserCreate = (props) => (
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>
-);
-
-export const UserFilter = (props) => (
-  <Filter {...props}>
-    <TextInput label="Search" source="userId" alwaysOn />
-    <ReferenceInput label="User" source="userId" reference="users" allowEmpty>
-      <SelectInput optionText="name" />
-    </ReferenceInput>
-  </Filter>
 );
