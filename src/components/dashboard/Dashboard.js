@@ -17,7 +17,9 @@ import BugReport from '@material-ui/icons/BugReport';
 import Code from '@material-ui/icons/Code';
 import Cloud from '@material-ui/icons/Cloud';
 // core components
-
+import {
+  Bar, Line, Pie, Doughnut,
+} from 'react-chartjs-2';
 
 import styles from '../../assets/jss/material-dashboard-react/views/dashboardStyle';
 import {
@@ -40,6 +42,34 @@ import GridContainer from './components/Grid/GridContainer';
 import GridItem from './components/Grid/GridItem';
 
 const useStyles = makeStyles(styles);
+
+const chartData = {
+  labels: ['Tours', 'St Cyr', 'St Avertin', 'Fondettes', 'La Ville Aux Dames', 'Montlouis', 'Joué-lès-Tours'],
+  datasets: [
+    {
+      label: 'Population',
+      data: [
+        136252,
+        15911,
+        14954,
+        10493,
+        5305,
+        10609,
+        37535,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+      ],
+    },
+  ],
+};
+
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -127,12 +157,9 @@ export default function Dashboard() {
         <GridItem xs={12} sm={12} md={4}>
           <Card chart>
             <CardHeader color="success">
-              <ChartistGraph
-                className="ct-chart"
-                data={dailySalesChart.data}
-                type="Line"
-                options={dailySalesChart.options}
-                listener={dailySalesChart.animation}
+              <Bar
+                data={chartData}
+                options={{}}
               />
             </CardHeader>
             <CardBody>
@@ -159,13 +186,9 @@ updated 4 minutes ago
         <GridItem xs={12} sm={12} md={4}>
           <Card chart>
             <CardHeader color="warning">
-              <ChartistGraph
-                className="ct-chart"
-                data={emailsSubscriptionChart.data}
-                type="Bar"
-                options={emailsSubscriptionChart.options}
-                responsiveOptions={emailsSubscriptionChart.responsiveOptions}
-                listener={emailsSubscriptionChart.animation}
+              <Pie
+                data={chartData}
+                options={{}}
               />
             </CardHeader>
             <CardBody>
@@ -183,13 +206,10 @@ campaign sent 2 days ago
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
           <Card chart>
-            <CardHeader color="danger">
-              <ChartistGraph
-                className="ct-chart"
-                data={completedTasksChart.data}
-                type="Line"
-                options={completedTasksChart.options}
-                listener={completedTasksChart.animation}
+            <CardHeader color="info">
+              <Line
+                data={chartData}
+                options={{}}
               />
             </CardHeader>
             <CardBody>

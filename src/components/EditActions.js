@@ -1,5 +1,7 @@
-import React from "react";
-import { CardActions, ListButton, ShowButton } from "react-admin";
+import React from 'react';
+import {
+  CardActions, ListButton, ShowButton,
+} from 'react-admin';
 
 const EditActions = ({
   basePath,
@@ -7,7 +9,6 @@ const EditActions = ({
   data,
   hasList,
   hasShow,
-  resource,
 }) => (
   <CardActions className={className}>
     {hasList && <ListButton basePath={basePath} />}
