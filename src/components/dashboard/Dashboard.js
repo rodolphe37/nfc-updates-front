@@ -134,10 +134,15 @@ export default function Dashboard() {
       </GridContainer>
       <GridContainer>
         <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="success">
+          <Card>
+            <CardHeader color="danger" stats icon>
+              <CardIcon color="success">
+                <Icon>Monthly Sales</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Daily Sales</p>
+              <h3 className={classes.cardTitle}>$23 750</h3>
               <Bar
-                data={chartData}
+                data={chartData3}
                 options={{}}
               />
             </CardHeader>
@@ -163,8 +168,13 @@ updated 4 minutes ago
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="warning">
+          <Card>
+            <CardHeader color="danger" stats icon>
+              <CardIcon color="warning">
+                <Icon>Email Subscriptions</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Monthly</p>
+              <h3 className={classes.cardTitle}>12187</h3>
               <Pie
                 data={chartData3}
                 options={{}}
@@ -184,8 +194,13 @@ campaign sent 2 days ago
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={4}>
-          <Card chart>
-            <CardHeader color="info">
+          <Card>
+            <CardHeader color="danger" stats icon>
+              <CardIcon color="info">
+                <Icon>Completed Tasks</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>by cities</p>
+              <h3 className={classes.cardTitle}>average by city</h3>
               <Line
                 data={chartData}
                 options={{}}
