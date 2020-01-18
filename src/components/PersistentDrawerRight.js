@@ -2,13 +2,10 @@ import React from 'react';
 import clsx from 'clsx';
 import { Resource } from 'react-admin';
 import {
-  makeStyles, useTheme, createStyles,
+  makeStyles, createStyles,
 } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import IconButton from '@material-ui/core/IconButton';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import { UsersList } from './users';
 import UsersEdit from './UsersEdit';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
@@ -60,16 +57,16 @@ const useStyles = makeStyles((theme) => createStyles({
 
 export default function PersistentDrawerRight(props) {
   const classes = useStyles();
-  const theme = useTheme();
+  // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
 
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
+  // const handleDrawerClose = () => {
+  //   setOpen(false);
+  // };
 
   return (
     <div className={classes.root}>
@@ -94,11 +91,7 @@ export default function PersistentDrawerRight(props) {
           paper: classes.drawerPaper,
         }}
       >
-        <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
-          </IconButton>
-        </div>
+        <div className={classes.drawerHeader} />
         <DeleteButtonWithConfirmation />
         <UsersEdit {...props} />
       </Drawer>
