@@ -14,7 +14,6 @@ import Img1 from './assets/img/secure.jpg';
 
 // import MyLogoutButton from './MyLogoutButton';
 
-const LoginPagePerso = () => <Login backgroundImage={Img1} />;
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
 function Administrateur() {
@@ -35,6 +34,7 @@ function Administrateur() {
   };
   // we generate a MUI-theme from state's theme object
   const muiTheme = createMuiTheme(theme);
+  const LoginPagePerso = () => <Login theme={muiTheme} backgroundImage={Img1} />;
   // the mui theme is used in the themeProvider.
   return (
     <Admin
