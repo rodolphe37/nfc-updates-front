@@ -1,190 +1,100 @@
-// ##############################
-// // // javascript library for creating charts
-// #############################
-const Chartist = require('chartist');
 
 // ##############################
-// // // variables used to create animation on charts
+// // // Charts - see Dashboard view
 // #############################
-const delays = 80;
-const durations = 500;
-const delays2 = 80;
-const durations2 = 500;
-
-// ##############################
-// // // Daily Sales
-// #############################
-
-const dailySalesChart = {
-  data: {
-    labels: ['M', 'T', 'W', 'T', 'F', 'S', 'S'],
-    series: [[12, 17, 7, 17, 23, 18, 38]],
-  },
-  options: {
-    lineSmooth: Chartist.Interpolation.cardinal({
-      tension: 0,
-    }),
-    low: 0,
-    high: 50, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-    chartPadding: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
+const chartData = {
+  labels: ['St Cyr', 'La Ville Aux Dames', 'St Avertin', 'Fondettes', 'Tours', 'Montlouis', 'Joué-lès-Tours'],
+  datasets: [
+    {
+      label: 'Population en 2015',
+      data: [
+        15911,
+        5305,
+        14954,
+        10493,
+        136252,
+        10609,
+        37535,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+      ],
     },
-  },
-  // for animation
-  animation: {
-    draw(data) {
-      if (data.type === 'line' || data.type === 'area') {
-        data.element.animate({
-          d: {
-            begin: 600,
-            dur: 700,
-            from: data.path
-              .clone()
-              .scale(1, 0)
-              .translate(0, data.chartRect.height())
-              .stringify(),
-            to: data.path.clone().stringify(),
-            easing: Chartist.Svg.Easing.easeOutQuint,
-          },
-        });
-      } else if (data.type === 'point') {
-        data.element.animate({
-          opacity: {
-            begin: (data.index + 1) * delays,
-            dur: durations,
-            from: 0,
-            to: 1,
-            easing: 'ease',
-          },
-        });
-      }
-    },
-  },
-};
-
-// ##############################
-// // // Email Subscriptions
-// #############################
-
-const emailsSubscriptionChart = {
-  data: {
-    labels: [
-      'Jan',
-      'Feb',
-      'Mar',
-      'Apr',
-      'Mai',
-      'Jun',
-      'Jul',
-      'Aug',
-      'Sep',
-      'Oct',
-      'Nov',
-      'Dec',
-    ],
-    series: [[542, 443, 320, 780, 553, 453, 326, 434, 568, 610, 756, 895]],
-  },
-  options: {
-    axisX: {
-      showGrid: false,
-    },
-    low: 0,
-    high: 1000,
-    chartPadding: {
-      top: 0,
-      right: 5,
-      bottom: 0,
-      left: 0,
-    },
-  },
-  responsiveOptions: [
-    [
-      'screen and (max-width: 640px)',
-      {
-        seriesBarDistance: 5,
-        axisX: {
-          labelInterpolationFnc(value) {
-            return value[0];
-          },
-        },
-      },
-    ],
   ],
-  animation: {
-    draw(data) {
-      if (data.type === 'bar') {
-        data.element.animate({
-          opacity: {
-            begin: (data.index + 1) * delays2,
-            dur: durations2,
-            from: 0,
-            to: 1,
-            easing: 'ease',
-          },
-        });
-      }
-    },
-  },
 };
 
-// ##############################
-// // // Completed Tasks
-// #############################
+const chartData2 = {
+  labels: ['Social', 'Wild Code School', 'Organic Search', 'Direct', 'Referral'],
+  datasets: [
+    {
+      label: 'Trafic',
+      data: [
+        159110,
+        50305,
+        149504,
+        104903,
+        106009,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+      ],
+    },
+  ],
+};
 
-const completedTasksChart = {
-  data: {
-    labels: ['12am', '3pm', '6pm', '9pm', '12pm', '3am', '6am', '9am'],
-    series: [[230, 750, 450, 300, 280, 240, 200, 190]],
-  },
-  options: {
-    lineSmooth: Chartist.Interpolation.cardinal({
-      tension: 0,
-    }),
-    low: 0,
-    high: 1000, // creative tim: we recommend you to set the high sa the biggest value + something for a better look
-    chartPadding: {
-      top: 0,
-      right: 0,
-      bottom: 0,
-      left: 0,
+const chartData3 = {
+  labels: ['JAN', 'FEB', 'MARCH', 'APRIL', 'MAY', 'JUN', 'JUL', 'AU', 'SEP', 'OCT', 'NOV', 'DEC'],
+  datasets: [
+    {
+      label: 'users',
+      data: [
+        159110,
+        50305,
+        149504,
+        1604903,
+        106009,
+        375305,
+        345105,
+        255147,
+        2547741,
+        5411110,
+        457224,
+        4552144,
+      ],
+      backgroundColor: [
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(153, 102, 255, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(255, 206, 86, 0.6)',
+        'rgba(255, 99, 132, 0.6)',
+        'rgba(54, 162, 235, 0.6)',
+        'rgba(75, 192, 192, 0.6)',
+        'rgba(255, 159, 64, 0.6)',
+
+      ],
     },
-  },
-  animation: {
-    draw(data) {
-      if (data.type === 'line' || data.type === 'area') {
-        data.element.animate({
-          d: {
-            begin: 600,
-            dur: 700,
-            from: data.path
-              .clone()
-              .scale(1, 0)
-              .translate(0, data.chartRect.height())
-              .stringify(),
-            to: data.path.clone().stringify(),
-            easing: Chartist.Svg.Easing.easeOutQuint,
-          },
-        });
-      } else if (data.type === 'point') {
-        data.element.animate({
-          opacity: {
-            begin: (data.index + 1) * delays,
-            dur: durations,
-            from: 0,
-            to: 1,
-            easing: 'ease',
-          },
-        });
-      }
-    },
-  },
+  ],
 };
 
 module.exports = {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
+  // these 3 are used to create the Charts - Dashboard view
+  chartData,
+  chartData2,
+  chartData3,
 };

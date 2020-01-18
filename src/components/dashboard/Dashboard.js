@@ -1,6 +1,8 @@
 import React from 'react';
 // react plugin for creating charts
-import ChartistGraph from 'react-chartist';
+import {
+  Bar, Line, Pie, Doughnut,
+} from 'react-chartjs-2';
 // @material-ui/core
 import { makeStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
@@ -16,17 +18,10 @@ import Accessibility from '@material-ui/icons/Accessibility';
 import BugReport from '@material-ui/icons/BugReport';
 import Code from '@material-ui/icons/Code';
 import Cloud from '@material-ui/icons/Cloud';
-// core components
-import {
-  Bar, Line, Pie, Doughnut,
-} from 'react-chartjs-2';
+import { chartData, chartData2, chartData3 } from './components/variables/charts';
 
+// core components
 import styles from '../../assets/jss/material-dashboard-react/views/dashboardStyle';
-import {
-  dailySalesChart,
-  emailsSubscriptionChart,
-  completedTasksChart,
-} from './components/variables/charts';
 
 import { bugs, website, server } from './components/variables/general';
 import CardFooter from './components/Card/CardFooter';
@@ -43,33 +38,6 @@ import GridItem from './components/Grid/GridItem';
 
 const useStyles = makeStyles(styles);
 
-const chartData = {
-  labels: ['Tours', 'St Cyr', 'St Avertin', 'Fondettes', 'La Ville Aux Dames', 'Montlouis', 'Joué-lès-Tours'],
-  datasets: [
-    {
-      label: 'Population',
-      data: [
-        136252,
-        15911,
-        14954,
-        10493,
-        5305,
-        10609,
-        37535,
-      ],
-      backgroundColor: [
-        'rgba(255, 99, 132, 0.6)',
-        'rgba(54, 162, 235, 0.6)',
-        'rgba(255, 206, 86, 0.6)',
-        'rgba(75, 192, 192, 0.6)',
-        'rgba(153, 102, 255, 0.6)',
-        'rgba(255, 159, 64, 0.6)',
-        'rgba(255, 99, 132, 0.6)',
-      ],
-    },
-  ],
-};
-
 
 export default function Dashboard() {
   const classes = useStyles();
@@ -80,14 +48,13 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="warning" stats icon>
               <CardIcon color="warning">
-                <Icon>Storage</Icon>
+                <Icon>Visites</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Used Space</p>
-              <h3 className={classes.cardTitle}>
-                49/50
-                {' '}
-                <small>GB</small>
-              </h3>
+              <p className={classes.cardCategory}>per Day</p>
+              <Doughnut
+                data={chartData2}
+                options={{}}
+              />
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -95,7 +62,7 @@ export default function Dashboard() {
                   <Warning />
                 </Danger>
                 <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                  Get more space
+                  Get more infos !
                 </a>
               </div>
             </CardFooter>
@@ -103,12 +70,16 @@ export default function Dashboard() {
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardHeader color="success" stats icon>
-              <CardIcon color="success">
+            <CardHeader color="info" stats icon>
+              <CardIcon color="info">
                 <Store />
               </CardIcon>
               <p className={classes.cardCategory}>Revenue</p>
               <h3 className={classes.cardTitle}>$34,245</h3>
+              <Bar
+                data={chartData3}
+                options={{}}
+              />
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
@@ -122,27 +93,35 @@ export default function Dashboard() {
           <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
-                <Icon>info outline</Icon>
+                <Icon>Actif Users</Icon>
               </CardIcon>
-              <p className={classes.cardCategory}>Fixed Issues</p>
-              <h3 className={classes.cardTitle}>75</h3>
+              <p className={classes.cardCategory}>Per Day</p>
+              <h3 className={classes.cardTitle}>2375</h3>
+              <Line
+                data={chartData3}
+                options={{}}
+              />
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
-                Tracked from Github
+                warranty from Google Analytics
               </div>
             </CardFooter>
           </Card>
         </GridItem>
         <GridItem xs={12} sm={6} md={3}>
           <Card>
-            <CardHeader color="info" stats icon>
-              <CardIcon color="info">
+            <CardHeader color="success" stats icon>
+              <CardIcon color="success">
                 <Accessibility />
               </CardIcon>
               <p className={classes.cardCategory}>Followers</p>
-              <h3 className={classes.cardTitle}>+245</h3>
+              <h3 className={classes.cardTitle}>+24500</h3>
+              <Pie
+                data={chartData3}
+                options={{}}
+              />
             </CardHeader>
             <CardFooter stats>
               <div className={classes.stats}>
