@@ -119,7 +119,7 @@ export default function Dashboard() {
               <p className={classes.cardCategory}>Followers</p>
               <h3 className={classes.cardTitle}>+24500</h3>
               <Pie
-                data={chartData3}
+                data={chartData2}
                 options={{}}
               />
             </CardHeader>
@@ -166,7 +166,7 @@ updated 4 minutes ago
           <Card chart>
             <CardHeader color="warning">
               <Pie
-                data={chartData}
+                data={chartData3}
                 options={{}}
               />
             </CardHeader>
