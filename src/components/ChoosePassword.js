@@ -19,16 +19,16 @@ export default function ChoosePassword({ open, handleClose }) {
           </DialogContentText>
           <TextField
             autoFocus
+            source="password"
             margin="dense"
-            id="name"
             label="password"
             type="password"
             fullWidth
           />
           <TextField
             autoFocus
+            source="password2"
             margin="dense"
-            id="name"
             label="repeat your password"
             type="password"
             fullWidth
