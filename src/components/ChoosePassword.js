@@ -6,6 +6,8 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
+import { FunctionField, TextInput } from 'react-admin';
+
 
 export default function ChoosePassword({ open, handleClose }) {
   return (
@@ -17,21 +19,21 @@ export default function ChoosePassword({ open, handleClose }) {
           <DialogContentText>
             To create your password, please enter this here.
           </DialogContentText>
-          <TextField
+          <TextInput
             autoFocus
             margin="dense"
-            id="name"
             label="password"
             type="password"
             fullWidth
+            source="password"
           />
-          <TextField
+          <TextInput
             autoFocus
             margin="dense"
-            id="name"
-            label="repeat your password"
+            label="password"
             type="password"
             fullWidth
+            source="password2"
           />
         </DialogContent>
         <DialogActions>

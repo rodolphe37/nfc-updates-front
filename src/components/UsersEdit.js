@@ -9,6 +9,8 @@ const UsersEdit = (props) => (
       <TextInput source="name" />
       <TextInput source="email" />
       <TextInput source="phone" />
+      {/* <TextInput source="password" />
+        <TextInput source="password2" /> */}
       <ModalPage
         label="Choose your password"
         source="password"

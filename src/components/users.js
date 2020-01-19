@@ -2,7 +2,7 @@ import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import {
   List, SimpleList, Datagrid,
-  TextField, EditButton, EmailField,
+  TextField, EditButton,
   SimpleForm, TextInput, Create, Pagination,
 } from 'react-admin';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
@@ -36,10 +36,10 @@ export const UsersList = (props) => {
           <Datagrid>
             <TextField source="id" />
             <TextField source="name" />
-            <EmailField source="email" />
+            <TextField source="email" />
             <TextField source="phone" />
             <TextField source="company" />
-            <EditButton />
+            <EditButton style={{ color: 'grey' }} />
             <DeleteButtonWithConfirmation />
           </Datagrid>
         )}
