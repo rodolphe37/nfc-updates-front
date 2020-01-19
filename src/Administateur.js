@@ -12,7 +12,6 @@ import DeleteButtonWithConfirmation from './components/DeleteButtonWithConfirmat
 import NotFound from './components/NotFound';
 import Img1 from './assets/img/secure.jpg';
 
-// import MyLogoutButton from './MyLogoutButton';
 
 const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
 
@@ -50,7 +49,6 @@ function Administrateur() {
         aria-label="Change-themes"
       />
       <Resource
-      // logoutButton={MyLogoutButton}
         delete={DeleteButtonWithConfirmation}
         name="users"
         list={UsersList}

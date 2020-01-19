@@ -57,16 +57,11 @@ const useStyles = makeStyles((theme) => createStyles({
 
 export default function PersistentDrawerRight(props) {
   const classes = useStyles();
-  // const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
     setOpen(true);
   };
-
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
 
   return (
     <div className={classes.root}>
