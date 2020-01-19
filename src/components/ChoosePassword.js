@@ -17,7 +17,7 @@ export default function ChoosePassword({ open, handleClose }) {
         <DialogTitle id="form-dialog-title">Create Password</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            To create your password, please enter this here.
+            To create your password, please enter an new password here.
           </DialogContentText>
           <TextInput
             autoFocus
@@ -33,7 +33,7 @@ export default function ChoosePassword({ open, handleClose }) {
             label="password"
             type="password"
             fullWidth
-            source="password2"
+            source="password"
           />
         </DialogContent>
         <DialogActions>
