@@ -64,10 +64,6 @@ export default function PersistentDrawerRight(props) {
     setOpen(true);
   };
 
-  // const handleDrawerClose = () => {
-  //   setOpen(false);
-  // };
-
   return (
     <div className={classes.root}>
       <CssBaseline />
