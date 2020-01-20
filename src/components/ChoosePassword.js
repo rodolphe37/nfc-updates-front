@@ -8,7 +8,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { TextInput } from 'react-admin';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-const theme = createMuiTheme({
+const theme2 = createMuiTheme({
   overrides: {
     // Style sheet name ⚛️
     MuiButton: {
@@ -27,7 +27,8 @@ const theme = createMuiTheme({
   },
 });
 
-export default function ChoosePassword({ open, handleClose }) {
+
+export default function ChoosePassword({ open, handleClose, theme }) {
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -55,12 +56,14 @@ export default function ChoosePassword({ open, handleClose }) {
             />
           </DialogContent>
           <DialogActions>
-            <Button onClick={handleClose} color="primary">
+            <ThemeProvider theme={theme2}>
+              <Button onClick={handleClose} color="primary">
             Cancel
-            </Button>
-            <Button onClick={handleClose} color="primary">
+              </Button>
+              <Button onClick={handleClose} color="primary">
             Save Password
-            </Button>
+              </Button>
+            </ThemeProvider>
           </DialogActions>
         </Dialog>
       </ThemeProvider>

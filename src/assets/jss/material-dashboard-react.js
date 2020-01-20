@@ -10,6 +10,8 @@
 
  =========================================================
 
+ // eslint-disable-next-line max-len
+ // eslint-disable-next-line max-len
  * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
  */
