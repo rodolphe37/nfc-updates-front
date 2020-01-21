@@ -1,6 +1,6 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Resource } from 'react-admin';
+import { Resource, useRedirect } from 'react-admin';
 import {
   makeStyles, createStyles, useTheme,
 } from '@material-ui/core/styles';
@@ -9,7 +9,7 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import IconButton from '@material-ui/core/IconButton';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import { UsersList } from './users';
 import UsersEdit from './UsersEdit';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
@@ -62,23 +62,13 @@ const useStyles = makeStyles((theme) => createStyles({
 export default function PersistentDrawerRight(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
-
-  const handleDrawerOpen = () => {
-    setOpen(true);
-  };
-
-  const handleDrawerClose = () => {
-    setOpen(false);
-  };
-
+  const redirect = useRedirect();
   return (
     <div className={classes.root}>
       <CssBaseline />
       <main
-        className={clsx(classes.content, {
-          [classes.contentShift]: open,
-        })}
+        className={clsx(classes.content,
+          classes.contentShift)}
       >
         <Resource
           name="users"
@@ -90,18 +80,15 @@ export default function PersistentDrawerRight(props) {
         className={classes.drawer}
         variant="persistent"
         anchor="right"
-        open={handleDrawerOpen}
+        open
         classes={{
           paper: classes.drawerPaper,
         }}
       >
         <div className={classes.drawerHeader} />
-        <IconButton onClose={handleDrawerClose}>
+        <IconButton onClick={() => redirect('/users')}>
           {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
         </IconButton>
-        {/* <Button onClick={handleDrawerClose} color="primary">
-            Cancel
-    </Button> */}
         {/* <DeleteButtonWithConfirmation /> */}
         <UsersEdit {...props} />
       </Drawer>

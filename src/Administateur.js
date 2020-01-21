@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { Admin, Resource, Login } from 'react-admin';
+import {
+  Admin, Resource, Login,
+} from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
 import { createMuiTheme } from '@material-ui/core/styles';
@@ -31,6 +33,7 @@ function Administrateur() {
       },
     });
   };
+
   // we generate a MUI-theme from state's theme object
   const muiTheme = createMuiTheme(theme);
   const LoginPagePerso = () => <Login theme={muiTheme} backgroundImage={Img1} />;
@@ -49,7 +52,7 @@ function Administrateur() {
         aria-label="Change-themes"
       />
       <Resource
-        delete={DeleteButtonWithConfirmation}
+        remove={DeleteButtonWithConfirmation}
         name="users"
         list={UsersList}
         edit={PersistentDrawerRight}
