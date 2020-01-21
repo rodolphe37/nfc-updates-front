@@ -53,7 +53,7 @@ export const UserCreate = (props) => (
       <TextInput source="name" />
       <TextInput source="email" />
       <TextInput source="phone" />
-      <TextInput type="password" source="password" />
+      <TextInput type="password" label="password" source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>
