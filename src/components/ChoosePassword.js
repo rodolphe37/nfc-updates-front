@@ -15,7 +15,7 @@ const theme2 = createMuiTheme({
       // Name of the rule
       text: {
         // Some CSS
-        backgroundColor: '#f50057',
+        backgroundColor: '#d41458',
         borderRadius: 3,
         border: 0,
         height: 48,
