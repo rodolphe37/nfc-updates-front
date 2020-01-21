@@ -7,6 +7,7 @@ import {
 } from 'react-admin';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
+
 const UsersPagination = (props) => (
   <Pagination
     rowsPerPageOptions={[5, 10, 25, 50, 100]}
