@@ -12,7 +12,7 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 // import Button from '@material-ui/core/Button';
 import { UsersList } from './users';
 import UsersEdit from './UsersEdit';
-import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
+// import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
 const drawerWidth = 340;
 
