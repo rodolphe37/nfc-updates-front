@@ -144,13 +144,13 @@
 
 - Make in the console :
 
--  ```sh $ cd client```
+-  ``` $ cd client```
 
--  ```sh  $ npm i``` or ```sh $ npm install ```
+-  ```  $ npm i``` or ``` $ npm install ```
 
 for install the dependencies and
 
--  ```sh $ npm start```
+-  ``` $ npm start```
 
 to start project.
 
