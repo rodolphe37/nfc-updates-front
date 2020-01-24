@@ -34,7 +34,7 @@
 ---
 ### Movie Demo
 
-[![Demogif](movieDemo.gif)
+ [!Demogif](movieDemo.gif)
 
 ---
 ### Picture Demo
