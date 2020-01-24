@@ -3,7 +3,7 @@
 
   
 
--  **Front end made with React, Material UI Hooks, React Hooks and React-Admin**
+-  **Front end administration made with React, Material UI Hooks, React Hooks and React-Admin**
 
   
 
@@ -105,8 +105,19 @@
 
 ### Current components on this template
 
-
-  
+| Components | Description |
+| ------ | ------ |
+| **authProvider** | Login connexion |
+| **dataProvider** | Connexion to the API |
+| **users** | Pagination, UserList, UserCreate and UserTitle |
+| **userEdit** | Edition of users |  
+| **Administrateur** | Resources from React-admin |
+| **PersistentDrawerRight** | Side panel for user edition |
+| **ModalPage** | Modal for changing password |
+| **ChoosePassword** | content of the Modal to create a new password |
+| **Dashboard** | complete dashboard with 'chart.js' Graph fully personnalisable |
+| **DeleteButtonWithConfiramtion** | Modal for enter the name of user you want to delete |
+| **NotFound** | error page |
 
 ---
 
@@ -139,7 +150,7 @@
 ## Start project
 
 ### Warning ! 
-***this administration template work with a Backend that you can download or clone at this address***
+***this administration template works with a Backend that you can download or clone at this address***
 [Backend for this administration template](https://github.com/WildCodeSchool/nfc-updates-back.git)
 ---
 
