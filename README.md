@@ -130,7 +130,7 @@
 
 ## Start project
 
-- Clone this repo (https://github.com/WildCodeSchool/nfc-updates-front.git)
+- Clone or download this repo (https://github.com/WildCodeSchool/nfc-updates-front.git)
 
 - Create ".env" file  on the root of your app and name it ".env.local" : 
 - put in this file :
