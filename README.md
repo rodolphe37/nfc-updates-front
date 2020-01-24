@@ -143,11 +143,11 @@
 [Backend for this administration template](https://github.com/WildCodeSchool/nfc-updates-back.git)
 ---
 
-- Clone or download this repo (https://github.com/WildCodeSchool/nfc-updates-front.git)
+- Clone or download this repo https://github.com/WildCodeSchool/nfc-updates-front.git
 
 - Create ".env" file  on the root of your app and name it ".env.local" : 
 - put in this file :
--  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a backEnd localhost Url
+-  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
 
 - Make in the console :
 
