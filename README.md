@@ -166,17 +166,17 @@
 
 - Create ".env" file  on your app's root and name it ".env.local" : 
 - put it in this file :
--  ```sh REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
+-  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
 
 - Do in the console :
 
--  ```sh $ cd client```
+-  ``` $ cd client```
 
--  ```sh  $ npm i``` or ```sh $ npm install ```
+-  ```  $ npm i``` or ``` $ npm install ```
 
 to install the dependencies and
 
--  ```sh $ npm start```
+-  ``` $ npm start```
 
 to start project.
 
