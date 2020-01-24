@@ -67,6 +67,9 @@
   
 
 ## Tech Stack
+
+ **You must have at minimun these versions for greats performances and good compatibility**
+
 | Tech used | LINKS |
 | ------ | ------ |
 | React V-16.12.0 | [https://github.com/facebook/react] |
