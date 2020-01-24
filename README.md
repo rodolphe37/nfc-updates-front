@@ -16,6 +16,12 @@
 
 -  [Picture](#picture-demo)
 
+    -[Dashboard page] => [Light](#Dashboard-page-light) [Dark](#Dashboard-page-dark)
+    -[Users List page] => [Light](#Users-List-page-light) [Dark](#Users-List-page-dark)
+    -[Edit Users page] => [Light](#Edit-Users-page-light) [Dark](#Edit-Users-page-dark)
+    -[Change password page] => [Light](#change-password-page-light) [Dark](#change-password-page-dark)
+    -[Delete User page] => [Light](#delete-user-page-light) [Dark](#delete-user-page-page-dark)
+
 
 [Tech Stack](#tech-stack)
 
@@ -40,32 +46,32 @@
 
 #### Light Mode	
 
--  **Login page**
+-  **Login page light**
 ![LoginLightpng](login-light.png)
--  **Dashboard page**
+-  **Dashboard page light**
 ![DashboardLightpng](dashboard-light.png)
--  **Users List page**
+-  **Users List page light**
 ![ListLightpng](list-with-pagination-light.png)
--  **Edit Users page**
+-  **Edit Users page light**
 ![EditLightpng](edit-users-light.png)
--  **Change password page**
+-  **Change password page light**
 ![ChangePasswordLightpng](change-password-light.png)
--  **Delete user page**
+-  **Delete user page light**
 ![DeleteUserLightpng](delete-with-confirmation-light.png)
 
   #### Dark Mode
 
-  -  **Login page**
+  -  **Login page dark**
 ![LoginDarkpng](login-dark.png)
--  **Dashboard page**
+-  **Dashboard page dark**
 ![DashboardDarkpng](dashboard-dark.png)
--  **Users List page**
+-  **Users List page dark**
 ![ListDarkpng](list-with-pagination-dark.png)
--  **Edit Users page**
+-  **Edit Users page dark**
 ![EditDarktpng](edit-users-dark.png)
--  **Change password page**
+-  **Change password page dark**
 ![ChangePasswordDarkpng](change-password-dark.png)
--  **Delete user page**
+-  **Delete user page dark**
 ![DeleteUserDarkpng](delete-with-confirmation-dark.png)
 
 ---
