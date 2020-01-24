@@ -3,7 +3,7 @@
 
   
 
--  **Front end making with React and React-Admin**
+-  **Front end making with React, Hooks and React-Admin**
 
   
 
