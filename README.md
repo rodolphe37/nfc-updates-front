@@ -90,10 +90,10 @@
 
 ### Full React admin Template
 
-  
+  - Complete fully fonctional theme for React
 
 
-  
+---
 
 ### Current components on this template
 
