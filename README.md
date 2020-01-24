@@ -6,7 +6,6 @@
 -  **Front end administration made with React, Material UI Hooks, React Hooks and React-Admin**
 
   
-
 ---  
 
 ## Quick Links
