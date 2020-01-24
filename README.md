@@ -63,7 +63,7 @@
 | [React-Admin V-3.0.2] | (https://marmelab.com/react-admin/) |
 | [Material-ui V-4.7.1] | (https://material-ui.com/) |
 | [chart.js V-2.9.3] | (https://www.chartjs.org/) | 
-| and [react-chartjs V-2 2.8.0] | (https://jerairrest.github.io/react-chartjs-2/) |
+| [react-chartjs V-2 2.8.0] | (https://jerairrest.github.io/react-chartjs-2/) |
 | [classnames V-2.2.6] | (https://www.npmjs.com/package/classnames) |
 | [clsx V-1.0.4] | (https://www.npmjs.com/package/clsx) |
 | [react-redux V-7.1.3] | (https://redux.js.org/) |
