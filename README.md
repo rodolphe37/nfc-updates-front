@@ -19,7 +19,7 @@
 
 [Tech Stack](#tech-stack)
 
-[About](#Implementation Highlights)
+[Dev dependencies](#Dev-dependencies)
 
   
 
@@ -84,15 +84,7 @@
 
 - Create-react-app with highly complex frontend structure
 
----
-
-  
-
-## Implementation Highlights
-
-  
-
-  
+---  
 
 ### Full React admin Template
 
