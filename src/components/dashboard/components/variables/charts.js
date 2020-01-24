@@ -6,7 +6,7 @@ const chartData = {
   labels: ['St Cyr', 'La Ville Aux Dames', 'St Avertin', 'Fondettes', 'Tours', 'Montlouis', 'Joué-lès-Tours'],
   datasets: [
     {
-      label: 'Population en 2015',
+      label: '2019',
       data: [
         15911,
         5305,

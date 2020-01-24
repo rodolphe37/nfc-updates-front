@@ -1,10 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { Button } from '@material-ui/core';
 import ChoosePassword from './ChoosePassword';
+
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -20,7 +21,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function ModalPage() {
+
+export default function ModalPage({ theme }) {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
 
@@ -32,12 +34,15 @@ export default function ModalPage() {
     setOpen(false);
   };
 
+  const muiTheme = createMuiTheme(theme);
+
   return (
     <div>
       <Button variant="contained" color="secondary" onClick={handleOpen}>
         Create Password
       </Button>
       <Modal
+        theme={muiTheme}
         aria-labelledby="title"
         aria-describedby="description"
         className={classes.modal}

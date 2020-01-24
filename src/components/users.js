@@ -2,10 +2,11 @@ import React from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import {
   List, SimpleList, Datagrid,
-  TextField, EditButton, EmailField,
+  TextField, EditButton,
   SimpleForm, TextInput, Create, Pagination,
 } from 'react-admin';
 import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
+
 
 const UsersPagination = (props) => (
   <Pagination
@@ -36,10 +37,10 @@ export const UsersList = (props) => {
           <Datagrid>
             <TextField source="id" />
             <TextField source="name" />
-            <EmailField source="email" />
+            <TextField source="email" />
             <TextField source="phone" />
             <TextField source="company" />
-            <EditButton />
+            <EditButton style={{ color: 'grey' }} />
             <DeleteButtonWithConfirmation />
           </Datagrid>
         )}
@@ -53,7 +54,7 @@ export const UserCreate = (props) => (
       <TextInput source="name" />
       <TextInput source="email" />
       <TextInput source="phone" />
-      <TextInput source="password" />
+      <TextInput type="password" label="password" source="password" />
       <TextInput multiline source="company" />
     </SimpleForm>
   </Create>
