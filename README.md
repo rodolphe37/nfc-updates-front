@@ -3,7 +3,7 @@
 
   
 
--  **Front end making with React, Material UI Hooks, React Hooks and React-Admin**
+-  **Front end made with React, Material UI Hooks, React Hooks and React-Admin**
 
   
 
@@ -98,7 +98,7 @@
 
 ### Full React admin Template
 
-  - Complete fully fonctional theme for React
+  - Fully complete fonctional theme for React
 
 
 ---
@@ -139,23 +139,23 @@
 ## Start project
 
 ### Warning ! 
-***this administration template work with an Backend when you can download or clone at this address***
+***this administration template work with a Backend that you can download or clone at this address***
 [Backend for this administration template](https://github.com/WildCodeSchool/nfc-updates-back.git)
 ---
 
 - Clone or download this repo https://github.com/WildCodeSchool/nfc-updates-front.git
 
-- Create ".env" file  on the root of your app and name it ".env.local" : 
-- put in this file :
+- Create ".env" file  on your app's root and name it ".env.local" : 
+- put it in this file :
 -  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
 
-- Make in the console :
+- Do in the console :
 
 -  ``` $ cd client```
 
 -  ```  $ npm i``` or ``` $ npm install ```
 
-for install the dependencies and
+to install the dependencies and
 
 -  ``` $ npm start```
 
