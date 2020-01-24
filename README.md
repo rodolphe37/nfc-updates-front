@@ -16,12 +16,6 @@
 
 -  [Picture](#picture-demo)
 
-    - [Dashboard page Light](#Dashboard-page-light) [Dark](#Dashboard-page-dark)
-    - [Users List page Light](#Users-List-page-light) [Dark](#Users-List-page-dark)
-    - [Edit Users page Light](#Edit-Users-page-light) [Dark](#Edit-Users-page-dark)
-    - [Change password page Light](#change-password-page-light) [Dark](#change-password-page-dark)
-    - [Delete User page Light](#delete-user-page-light) [Dark](#delete-user-page-page-dark)
-
 
 [Tech Stack](#tech-stack)
 
