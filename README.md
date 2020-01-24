@@ -1,68 +1,157 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+# Admin template - React
 
-In the project directory, you can run:
+  
 
-### `npm start`
+-  **Front end making with React and React-Admin**
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+---  
 
-### `npm test`
+## Quick Links
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+[Demo](#demo)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-  [Picture](#picture-demo)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+[Tech Stack](#tech-stack)
 
-### `npm run eject`
+[About](#Implementation Highlights)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+-  [Current components on this template](#Current-components-on-this-template)
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+[Author](#author)
+ 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[License](#license)
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
+ 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Picture Demo
 
-### Code Splitting
+#### Light Mode											
+![LoginLightpng](login-light.png)
+![DashboardLightpng](dashboard-light.png)
+![ListLightpng](list-with-pagination-light.png)
+![EditLightpng](edit-users-light.png)
+![ChangePasswordLightpng](change-password-light.png)
+![DeleteUserLightpng](delete-with-confirmation-light.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+  #### Dark Mode
+  ![LoginDarkpng](login-dark.png)
+  ![DashboardDarkpng](dashboard-dark.png)
+  ![ListDarkpng](list-with-pagination-dark.png)
+![EditDarktpng](edit-users-dark.png)
+![ChangePasswordDarkpng](change-password-dark.png)
+![DeleteUserDarkpng](delete-with-confirmation-dark.png)
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+  
 
-### Making a Progressive Web App
+## Tech Stack
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+-  [React V-16.12.0](https://github.com/facebook/react)
+-  [React-Admin V-3.0.2](https://marmelab.com/react-admin/)
+-  [Material-ui V-4.7.1](https://material-ui.com/)
+- [chart.js V-2.9.3](https://www.chartjs.org/) and [react-chartjs V-2 2.8.0](https://jerairrest.github.io/react-chartjs-2/)
+- [classnames V-2.2.6](https://www.npmjs.com/package/classnames)
+- [clsx V-1.0.4](https://www.npmjs.com/package/clsx)
+- [react-redux V-7.1.3](https://redux.js.org/)
+- [recompose V-0.30.0](https://github.com/acdlite/recompose)
+- [validator V-12.1.0](https://www.npmjs.com/package/validator)
+- [web-pack V-1.0.0](https://webpack.js.org/)
+---
 
-### Advanced Configuration
+### Dev Dependencies
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- [eslint V6.6.0](https://eslint.org/)
+		
+		- "eslint-config-airbnb": "^18.0.1",
+		- "eslint-plugin-import": "^2.18.2",
+		- "eslint-plugin-jsx-a11y": "^6.2.3",
+		- "eslint-plugin-react": "^7.17.0",
+		- "eslint-plugin-react-hooks": "^1.7.0"
 
-### Deployment
+- Create-react-app with highly complex frontend structure
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+---
 
-### `npm run build` fails to minify
+  
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Implementation Highlights
+
+  
+
+  
+
+### Full React admin Template
+
+  
+
+
+  
+
+### Current components on this template
+
+
+  
+
+---
+
+  
+
+## Author
+
+  
+
+- Rodolphe Augusto - Dylan Belouis
+
+  
+
+---
+
+  
+
+## License
+
+  
+
+- MIT.
+
+  
+
+---
+
+  
+
+## Start project
+
+- Clone this repo (https://github.com/WildCodeSchool/nfc-updates-front.git)
+
+- Create ".env" file  on the root of your app and name it ".env.local" : 
+- put in this file :
+-  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a backEnd localhost Url
+
+- Make in the console :
+
+-  ```cd client```
+
+-  ``` npm i``` or ```npm install ```
+
+for install the dependencies and
+
+-  ```npm start```
+
+to start project.
+
+  
+
+enjoy!!!

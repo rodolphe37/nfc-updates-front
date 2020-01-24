@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
@@ -8,7 +8,13 @@ import ActionDelete from '@material-ui/icons/Delete';
 import classnames from 'classnames';
 import { translate, crudDelete, startUndoable } from 'ra-core';
 import IconCancel from '@material-ui/icons/Cancel';
-import { Input, Dialog, DialogTitle, DialogContent, DialogActions } from '@material-ui/core';
+import {
+  Input,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogActions,
+} from '@material-ui/core';
 
 import { Button } from 'react-admin';
 
@@ -19,10 +25,10 @@ const styles = (theme) => ({
       backgroundColor: fade(theme.palette.error.main, 0.12),
       // Reset on mouse devices
       '@media (hover: none)': {
-        backgroundColor: 'transparent'
-      }
-    }
-  }
+        backgroundColor: 'transparent',
+      },
+    },
+  },
 });
 
 class DeleteButtonWithConfirmation extends Component {
@@ -37,10 +43,6 @@ class DeleteButtonWithConfirmation extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value });
-  }
-
   handleClick = () => {
     this.setState({ showDialog: true });
   };
@@ -48,25 +50,34 @@ class DeleteButtonWithConfirmation extends Component {
   handleCloseClick = () => {
     this.setState({ showDialog: false });
   };
-  
+
   handleSubmit = (event) => {
     event.preventDefault();
     this.setState({ showDialog: false });
-    const { dispatchCrudDelete, startUndoable, resource, record, basePath, redirect, undoable } = this.props;
-    console.log(this.props)
+    const {
+      dispatchCrudDelete, resource, record, basePath, redirect, undoable,
+    } = this.props;
+    /* eslint-disable-next-line */
+    console.log(this.props);
     if (undoable && this.state.value !== record.name) {
+      /* eslint-disable-next-line */
       console.log("C'est le mauvais nom");
-    } if(this.state.value === record.name) {
-      console.log("C'est le bon nom")
-     return dispatchCrudDelete(resource, record.id, record, basePath, redirect);
+    } if (this.state.value === record.name) {
+      /* eslint-disable-next-line */
+      console.log("C'est le bon nom");
+      return dispatchCrudDelete(resource, record.id, record, basePath, redirect);
     }
   };
+
+  handleChange(event) {
+    this.setState({ value: event.target.value });
+  }
 
   render() {
     const { showDialog } = this.state;
     const { label = 'ra.action.delete', classes = {}, className } = this.props;
     return (
-      <Fragment>
+      <>
         <Button onClick={this.handleClick} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button">
           <ActionDelete />
         </Button>
@@ -79,44 +90,43 @@ class DeleteButtonWithConfirmation extends Component {
           </DialogContent>
           <DialogActions>
             <form onSubmit={this.handleSubmit}>
-          <Input className="Form-input_Submit" value={this.state.value} onChange={this.handleChange}/>
-            <Button onClick={this.handleSubmit} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button">
-            </Button>
-          </form>
+              <Input className="Form-input_Submit" value={this.state.value} onChange={this.handleChange} />
+              <Button onClick={this.handleSubmit} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button" />
+            </form>
             <Button label="ra.action.cancel" onClick={this.handleCloseClick}>
               <IconCancel />
             </Button>
           </DialogActions>
         </Dialog>
-      </Fragment>
+      </>
     );
   }
 }
 
 DeleteButtonWithConfirmation.propTypes = {
-  basePath: PropTypes.string,
-  classes: PropTypes.object,
-  className: PropTypes.string,
+  // basePath: PropTypes.string,
+  // classes: PropTypes.object,
+  // className: PropTypes.string,
   dispatchCrudDelete: PropTypes.func.isRequired,
-  label: PropTypes.string,
-  record: PropTypes.object,
+  // label: PropTypes.string,
+  // record: PropTypes.object,
   redirect: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.func]),
   resource: PropTypes.string.isRequired,
-  startUndoable: PropTypes.func,
-  translate: PropTypes.func,
-  undoable: PropTypes.bool
+  // startUndoable: PropTypes.func,
+  // translate: PropTypes.func,
+  undoable: PropTypes.bool,
 };
 
 DeleteButtonWithConfirmation.defaultProps = {
   redirect: 'list',
-  undoable: true
+  undoable: true,
 };
 
 export default compose(
   connect(
     null,
-    { startUndoable, dispatchCrudDelete: crudDelete }
+    { startUndoable, dispatchCrudDelete: crudDelete },
   ),
   translate,
-  withStyles(styles)
+  withStyles(styles),
 )(DeleteButtonWithConfirmation);
