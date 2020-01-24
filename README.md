@@ -104,10 +104,10 @@
 | **userEdit** | Edition of users |  
 | **Administrateur** | Resources from React-admin |
 | **PersistentDrawerRight** | Side panel for user edition |
-| **ModalPage** | Modal for changing password |
+| **ModalPage** | Modal to changing password |
 | **ChoosePassword** | content of the Modal to create a new password |
 | **Dashboard** | complete dashboard with 'chart.js' Graph fully personnalisable |
-| **DeleteButtonWithConfirmation** | Modal for enter the name of user you want to delete |
+| **DeleteButtonWithConfirmation** | Modal to enter the name of the user you want to delete |
 | **NotFound** | 404 error page |
 
 ---
