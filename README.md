@@ -117,7 +117,7 @@
 | **ChoosePassword** | content of the Modal to create a new password |
 | **Dashboard** | complete dashboard with 'chart.js' Graph fully personnalisable |
 | **DeleteButtonWithConfiramtion** | Modal for enter the name of user you want to delete |
-| **NotFound** | error page |
+| **NotFound** | 404 error page |
 
 ---
 
