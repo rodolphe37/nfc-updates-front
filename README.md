@@ -35,6 +35,13 @@
 ### Movie Demo
 
 [![Watch the video](movieDemo.webm)
+
+produces:
+
+<video controls="controls">
+  <source type="video/webm" src="movieDemo.webm"></source>
+  <p>Your browser does not support the video element.</p>
+</video>
 ---
 ### Picture Demo
 ---
