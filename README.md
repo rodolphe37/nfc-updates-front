@@ -14,6 +14,7 @@
 
 [Demo](#demo)
 
+-  [Movie](#movie-demo)
 -  [Picture](#picture-demo)
 
 [Tech Stack](#tech-stack)
@@ -29,9 +30,14 @@
 [Start Project](#Start-project)
 
 ---
+## Demo
+---
+### Movie Demo
 
+![MovieWebm](movieDemo.webm)
+---
 ### Picture Demo
-
+---
 #### Light Mode	
 
 -  **Login page**
@@ -63,8 +69,7 @@
 ![DeleteUserDarkpng](delete-with-confirmation-dark.png)
 
 ---
-
-  
+ 
 
 ## Tech Stack
 
