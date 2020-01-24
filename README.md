@@ -59,17 +59,17 @@
 ## Tech Stack
 | Tech used | LINKS |
 | ------ | ------ |
-| [React V-16.12.0] | (https://github.com/facebook/react) |
-| [React-Admin V-3.0.2] | (https://marmelab.com/react-admin/) |
-| [Material-ui V-4.7.1] | (https://material-ui.com/) |
-| [chart.js V-2.9.3] | (https://www.chartjs.org/) | 
-| [react-chartjs V-2 2.8.0] | (https://jerairrest.github.io/react-chartjs-2/) |
-| [classnames V-2.2.6] | (https://www.npmjs.com/package/classnames) |
-| [clsx V-1.0.4] | (https://www.npmjs.com/package/clsx) |
-| [react-redux V-7.1.3] | (https://redux.js.org/) |
-| [recompose V-0.30.0] | (https://github.com/acdlite/recompose) |
-| [validator V-12.1.0] | (https://www.npmjs.com/package/validator) |
-| [web-pack V-1.0.0] | (https://webpack.js.org/) |
+| React V-16.12.0 | [https://github.com/facebook/react] |
+| React-Admin V-3.0.2 | [https://marmelab.com/react-admin/] |
+| Material-ui V-4.7.1 | [https://material-ui.com/] |
+| chart.js V-2.9.3 | [https://www.chartjs.org/] | 
+| react-chartjs V-2 2.8.0 | [https://jerairrest.github.io/react-chartjs-2/] |
+| classnames V-2.2.6 | [https://www.npmjs.com/package/classnames] |
+| clsx V-1.0.4 | [https://www.npmjs.com/package/clsx] |
+| react-redux V-7.1.3 | [https://redux.js.org/] |
+| recompose V-0.30.0 | [https://github.com/acdlite/recompose] |
+| validator V-12.1.0 | [https://www.npmjs.com/package/validator] |
+| web-pack V-1.0.0 | [https://webpack.js.org/] |
 ---
 
 ### Dev Dependencies
