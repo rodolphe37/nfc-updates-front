@@ -34,7 +34,7 @@
 ---
 ### Movie Demo
 
-![MovieWebm](movieDemo.webm)
+[![Watch the video](movieDemo.webm)
 ---
 ### Picture Demo
 ---
