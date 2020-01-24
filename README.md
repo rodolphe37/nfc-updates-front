@@ -40,33 +40,13 @@
 ---
 #### Light Mode	
 
--  **Login page**
-![LoginLightpng](login-light.png)
 -  **Dashboard page**
 ![DashboardLightpng](dashboard-light.png)
--  **Users List page**
-![ListLightpng](list-with-pagination-light.png)
--  **Edit Users page**
-![EditLightpng](edit-users-light.png)
--  **Change password page**
-![ChangePasswordLightpng](change-password-light.png)
--  **Delete user page**
-![DeleteUserLightpng](delete-with-confirmation-light.png)
 
   #### Dark Mode
 
-  -  **Login page**
-![LoginDarkpng](login-dark.png)
 -  **Dashboard page**
 ![DashboardDarkpng](dashboard-dark.png)
--  **Users List page**
-![ListDarkpng](list-with-pagination-dark.png)
--  **Edit Users page**
-![EditDarktpng](edit-users-dark.png)
--  **Change password page**
-![ChangePasswordDarkpng](change-password-dark.png)
--  **Delete user page**
-![DeleteUserDarkpng](delete-with-confirmation-dark.png)
 
 ---
  
@@ -74,6 +54,9 @@
 ## Tech Stack
 
  **You must have at minimun these versions for greats performances and good compatibility**
+
+ **Version of Node js**
+-    v8.16.2 minimun
 
 | Tech used | LINKS |
 | ------ | ------ |
