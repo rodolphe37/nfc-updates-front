@@ -6,7 +6,6 @@
 -  **Front end administration made with React, Material UI Hooks, React Hooks and React-Admin**
 
   
-
 ---  
 
 ## Quick Links
@@ -167,17 +166,17 @@
 
 - Create ".env" file  on your app's root and name it ".env.local" : 
 - put it in this file :
--  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
+-  ```sh REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
 
 - Do in the console :
 
--  ``` $ cd client```
+-  ```sh $ cd client```
 
--  ```  $ npm i``` or ``` $ npm install ```
+-  ```sh  $ npm i``` or ```sh $ npm install ```
 
 to install the dependencies and
 
--  ``` $ npm start```
+-  ```sh $ npm start```
 
 to start project.
 
