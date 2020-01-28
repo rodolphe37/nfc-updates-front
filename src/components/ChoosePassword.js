@@ -5,8 +5,12 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { TextInput, SimpleForm, required } from 'react-admin';
+import {
+  TextInput, SimpleForm, required, SaveButton, Toolbar, useMutation, useRedirect,
+} from 'react-admin';
+import IconCancel from '@material-ui/icons/Cancel';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
 
 const theme2 = createMuiTheme({
   overrides: {
@@ -27,8 +31,18 @@ const theme2 = createMuiTheme({
   },
 });
 
-
-export default function ChoosePassword({ open, handleClose, theme }) {
+export default function ChoosePassword({ onCancel, open, theme }) {
+  const redirect = useRedirect();
+  const PasswordEditToolbar = ({ ...props }) => (
+    <Toolbar {...props}>
+      <SaveButton {...props} />
+      <DialogActions>
+        <Button label="ra.action.cancel" onClick={() => redirect('/users')}>
+          <IconCancel />
+        </Button>
+      </DialogActions>
+    </Toolbar>
+  );
   return (
     <div>
       <ThemeProvider theme={theme}>
@@ -38,8 +52,9 @@ export default function ChoosePassword({ open, handleClose, theme }) {
             <DialogContentText>
             To create your password, please enter an new password here.
             </DialogContentText>
-            <SimpleForm autoComplete="off">
+            <SimpleForm toolbar={<PasswordEditToolbar onCancel={onCancel} />}>
               <TextInput
+                autoComplete="off"
                 id="input1"
                 autoFocus
                 margin="dense"
@@ -47,31 +62,11 @@ export default function ChoosePassword({ open, handleClose, theme }) {
                 type="password"
                 fullWidth
                 source="password"
-                // required
                 validate={[required()]}
               />
-              {/* <TextInput source="password" fullWidth  />
-              <TextInput
-                autoFocus
-                margin="dense"
-                label="password"
-                type="password"
-                fullWidth
-                source="input1"
-                required
-              /> */}
+
             </SimpleForm>
           </DialogContent>
-          <DialogActions>
-            <ThemeProvider theme={theme2}>
-              <Button onClick={handleClose} color="primary">
-            Cancel
-              </Button>
-              <Button onClick={handleClose} color="primary">
-            Save Password
-              </Button>
-            </ThemeProvider>
-          </DialogActions>
         </Dialog>
       </ThemeProvider>
     </div>
