@@ -9,22 +9,6 @@ const UsersEdit = (props) => (
       <TextInput source="name" />
       <TextInput source="email" />
       <TextInput source="phone" />
-      {/* <TextInput
-        // autoFocus
-        // margin="dense"
-        // label="password"
-        type="password"
-        // fullWidth
-        source="password"
-      />}
-      {/* <TextInput
-        // autoFocus
-        // margin="dense"
-        // label="password"
-        type="password"
-        // fullWidth
-        source="password"
-      /> */}
       <ModalPage
         label="Choose your password"
         source="password"
