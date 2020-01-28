@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
-import { TextInput } from 'react-admin';
+import { TextInput, SimpleForm } from 'react-admin';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 const theme2 = createMuiTheme({
@@ -38,22 +38,28 @@ export default function ChoosePassword({ open, handleClose, theme }) {
             <DialogContentText>
             To create your password, please enter an new password here.
             </DialogContentText>
-            <TextInput
-              autoFocus
-              margin="dense"
-              label="password"
-              type="password"
-              fullWidth
-              source="password"
-            />
-            <TextInput
-              autoFocus
-              margin="dense"
-              label="password"
-              type="password"
-              fullWidth
-              source="password"
-            />
+            <SimpleForm>
+              <TextInput
+                id="input1"
+                autoFocus
+                margin="dense"
+                label="password"
+                type="password"
+                fullWidth
+                source="password"
+                required
+              />
+              {/* <TextInput source="password" fullWidth autoComplete="off" />
+              <TextInput
+                autoFocus
+                margin="dense"
+                label="password"
+                type="password"
+                fullWidth
+                source="input1"
+                required
+              /> */}
+            </SimpleForm>
           </DialogContent>
           <DialogActions>
             <ThemeProvider theme={theme2}>
