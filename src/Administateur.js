@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Admin, Resource, Login,
+  Admin, Resource, Login, fetchUtils,
 } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
@@ -14,8 +14,16 @@ import DeleteButtonWithConfirmation from './components/DeleteButtonWithConfirmat
 import NotFound from './components/NotFound';
 import Img1 from './assets/img/secure.jpg';
 
+const httpClient = (url, options = {}) => {
+  if (!options.headers) {
+    options.headers = new Headers({ Accept: 'application/json' });
+  }
+  const token = localStorage.getItem('token');
+  options.headers.set('Authorization', `Bearer ${token}`);
+  return fetchUtils.fetchJson(url, options);
+};
 
-const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL);
+const dataProvider = jsonServerProvider(process.env.REACT_APP_API_URL, httpClient);
 
 function Administrateur() {
   // We keep the theme in app state

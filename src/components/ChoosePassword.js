@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {
-  TextInput, SimpleForm, required, SaveButton, Toolbar, useMutation, useRedirect,
+  TextInput, SimpleForm, required, SaveButton, Toolbar, useRedirect,
 } from 'react-admin';
 import IconCancel from '@material-ui/icons/Cancel';
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -16,13 +16,14 @@ export default function ChoosePassword({ onCancel, open, theme }) {
   const redirect = useRedirect();
 
   const PasswordEditToolbar = ({ ...props }) => (
-    <Toolbar {...props}>
-      <DialogActions>
-        <SaveButton {...props} />
+    <Toolbar basepath="true" {...props}>
+      <DialogActions saving="true">
+        <SaveButton {...props} handlesubmitwithredirect />
       </DialogActions>
       <DialogActions>
         <Button label="ra.action.cancel" onClick={() => redirect('/users')}>
           <IconCancel />
+Cancel
         </Button>
       </DialogActions>
     </Toolbar>
@@ -36,10 +37,9 @@ export default function ChoosePassword({ onCancel, open, theme }) {
             <DialogContentText>
             To create your password, please enter an new password here.
             </DialogContentText>
-            <SimpleForm toolbar={<PasswordEditToolbar onCancel={onCancel} />}>
+            <SimpleForm toolbar={<PasswordEditToolbar onCancel={onCancel} pristine="true" invalid="false" />}>
               <TextInput
                 autoComplete="off"
-                id="input1"
                 autoFocus
                 margin="dense"
                 label="password"
