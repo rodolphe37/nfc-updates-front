@@ -36,7 +36,9 @@ class DeleteButtonWithConfirmation extends Component {
     super(props);
     this.state = {
       showDialog: false,
+      showOptions: false,
       value: '',
+      responseName: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -49,6 +51,7 @@ class DeleteButtonWithConfirmation extends Component {
 
   handleCloseClick = () => {
     this.setState({ showDialog: false });
+    this.setState({ showOptions: false });
   };
 
   handleSubmit = (event) => {
@@ -57,14 +60,12 @@ class DeleteButtonWithConfirmation extends Component {
     const {
       dispatchCrudDelete, resource, record, basePath, redirect, undoable,
     } = this.props;
-    /* eslint-disable-next-line */
-    console.log(this.props);
     if (undoable && this.state.value !== record.name) {
-      /* eslint-disable-next-line */
-      console.log("C'est le mauvais nom");
+      this.setState({ showOptions: true })
+      this.setState({responseName: "Vous avez entrez le mauvais nom, l'utilisateur n'a pas était supprimé." }) 
     } if (this.state.value === record.name) {
-      /* eslint-disable-next-line */
-      console.log("C'est le bon nom");
+      this.setState({ showOptions: true });
+      this.setState({responseName: "Ok" });
       return dispatchCrudDelete(resource, record.id, record, basePath, redirect);
     }
   };
@@ -78,6 +79,17 @@ class DeleteButtonWithConfirmation extends Component {
     const { label = 'ra.action.delete', classes = {}, className } = this.props;
     return (
       <>
+        <Dialog fullWidth open={this.state.showOptions} onClose={this.handleCloseClick}>
+            <DialogTitle>Confirmation de suppression</DialogTitle>
+          <DialogContent>
+            {this.state.responseName}
+          </DialogContent>
+          <DialogActions>
+            <Button label="ra.action.cancel" onClick={this.handleCloseClick}>
+              <IconCancel />
+            </Button>
+          </DialogActions>
+        </Dialog>
         <Button onClick={this.handleClick} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button">
           <ActionDelete />
         </Button>
