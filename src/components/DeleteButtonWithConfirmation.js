@@ -62,7 +62,7 @@ class DeleteButtonWithConfirmation extends Component {
     } = this.props;
     if (undoable && this.state.value !== record.name) {
       this.setState({ showOptions: true })
-      this.setState({responseName: "Vous avez entrez le mauvais nom, l'utilisateur n'a pas était supprimé." }) 
+      this.setState({responseName: "You have entered the wrong name, the user hasn't been deleted." }) 
     } if (this.state.value === record.name) {
       this.setState({ showOptions: true });
       this.setState({responseName: "Ok" });
@@ -80,7 +80,7 @@ class DeleteButtonWithConfirmation extends Component {
     return (
       <>
         <Dialog fullWidth open={this.state.showOptions} onClose={this.handleCloseClick}>
-            <DialogTitle>Confirmation de suppression</DialogTitle>
+            <DialogTitle>Delete confirmation</DialogTitle>
           <DialogContent>
             {this.state.responseName}
           </DialogContent>
