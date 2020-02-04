@@ -10,7 +10,7 @@ import { UsersList, UserCreate } from './components/users';
 import Dashboard from './components/dashboard/Dashboard';
 import authProvider from './components/authProvider';
 import PersistentDrawerRight from './components/PersistentDrawerRight';
-import DeleteButtonWithConfirmation from './components/DeleteButtonWithConfirmation';
+import DeleteButtonConfirm from './components/DeleteButtonConfim';
 import NotFound from './components/NotFound';
 import Img1 from './assets/img/secure.jpg';
 
@@ -60,7 +60,7 @@ function Administrateur() {
         aria-label="Change-themes"
       />
       <Resource
-        remove={DeleteButtonWithConfirmation}
+        remove={DeleteButtonConfirm}
         name="users"
         list={UsersList}
         edit={PersistentDrawerRight}

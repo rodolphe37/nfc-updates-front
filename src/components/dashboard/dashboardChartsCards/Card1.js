@@ -26,7 +26,7 @@ const Card1 = () => {
     <Card>
       <CardHeader color="warning" stats icon>
         <CardIcon color="warning">
-          <Icon>Visites</Icon>
+          <Icon>Visits</Icon>
         </CardIcon>
         <p className={classes.cardCategory}>per Day</p>
         <Doughnut

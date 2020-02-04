@@ -6,7 +6,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import {
-  TextInput, SimpleForm, required, SaveButton, Toolbar, useRedirect,
+  TextInput, SimpleForm, required, Toolbar, useRedirect,
 } from 'react-admin';
 import IconCancel from '@material-ui/icons/Cancel';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';

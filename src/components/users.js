@@ -5,7 +5,7 @@ import {
   TextField, EditButton,
   SimpleForm, TextInput, Create, Pagination,
 } from 'react-admin';
-import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
+import DeleteButtonConfirm from './DeleteButtonConfim';
 
 
 const UsersPagination = (props) => (
@@ -25,7 +25,7 @@ export const UserTitle = ({ record }) => (
 export const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-    <List {...props} pagination={<UsersPagination />} delete={<DeleteButtonWithConfirmation />}>
+    <List {...props} pagination={<UsersPagination />} delete={<DeleteButtonConfirm />}>
       {isSmall
         ? (
           <SimpleList
@@ -41,7 +41,7 @@ export const UsersList = (props) => {
             <TextField source="phone" />
             <TextField source="company" />
             <EditButton style={{ color: 'grey' }} />
-            <DeleteButtonWithConfirmation />
+            <DeleteButtonConfirm />
           </Datagrid>
         )}
     </List>

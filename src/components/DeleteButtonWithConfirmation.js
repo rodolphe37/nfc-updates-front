@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import compose from 'recompose/compose';
@@ -31,14 +31,14 @@ const styles = (theme) => ({
   },
 });
 
-class DeleteButtonWithConfirmation extends Component {
+class DeleteButtonWithConfirmation extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       showDialog: false,
       showOptions: false,
       value: '',
-      responseName: ''
+      responseName: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -61,11 +61,11 @@ class DeleteButtonWithConfirmation extends Component {
       dispatchCrudDelete, resource, record, basePath, redirect, undoable,
     } = this.props;
     if (undoable && this.state.value !== record.name) {
-      this.setState({ showOptions: true })
-      this.setState({responseName: "You have entered the wrong name, the user hasn't been deleted." }) 
+      this.setState({ showOptions: true });
+      this.setState({ responseName: "You have entered the wrong name, the user hasn't been deleted." });
     } if (this.state.value === record.name) {
       this.setState({ showOptions: true });
-      this.setState({responseName: "Ok" });
+      this.setState({ responseName: 'Ok' });
       return dispatchCrudDelete(resource, record.id, record, basePath, redirect);
     }
   };
@@ -80,7 +80,7 @@ class DeleteButtonWithConfirmation extends Component {
     return (
       <>
         <Dialog fullWidth open={this.state.showOptions} onClose={this.handleCloseClick}>
-            <DialogTitle>Delete confirmation</DialogTitle>
+          <DialogTitle>Delete confirmation</DialogTitle>
           <DialogContent>
             {this.state.responseName}
           </DialogContent>

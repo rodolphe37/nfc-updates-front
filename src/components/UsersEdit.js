@@ -4,12 +4,12 @@ import {
 } from 'react-admin';
 import ModalPage from './ModalPage';
 import { UserTitle } from './users';
-import DeleteButtonWithConfirmation from './DeleteButtonWithConfirmation';
+import DeleteButtonConfirm from './DeleteButtonConfim';
 
 const UsersEditToolbar = (props) => (
   <Toolbar {...props}>
     <SaveButton />
-    <DeleteButtonWithConfirmation />
+    <DeleteButtonConfirm />
   </Toolbar>
 );
 
