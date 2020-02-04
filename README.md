@@ -15,13 +15,14 @@
 
 -  [Movie](#movie-demo)
 
+[Start Project](#Start-project)
+
 [Current components on this template](#Current-components-on-this-template)
 
 [Author](#author)
 
 [License](#license)
 
-[Start Project](#Start-project)
 
 ---
 ## Demo
