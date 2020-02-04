@@ -54,8 +54,6 @@ git clone git@github.com:WildCodeSchool/nfc-updates-front.git
 
 $ cd nfc-updates-front
 
-$ cd client
-
 $ npm i or $ npm install
 
 $ npm start
