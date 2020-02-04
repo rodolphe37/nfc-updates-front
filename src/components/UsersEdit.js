@@ -1,15 +1,23 @@
 import React from 'react';
 import {
-  SimpleForm, TextInput, Edit, SaveButton, Toolbar,
+  SimpleForm, TextInput, Edit, SaveButton, Toolbar, Confirm, DeleteButton,
 } from 'react-admin';
 import ModalPage from './ModalPage';
 import { UserTitle } from './users';
-import DeleteButtonConfirm from './DeleteButtonConfim';
+// import DeleteButtonConfirm from './DeleteButtonConfim';
 
 const UsersEditToolbar = (props) => (
   <Toolbar {...props}>
     <SaveButton />
-    <DeleteButtonConfirm />
+    <Confirm
+      title="Delete Item"
+      content="Are you sure you want to delete this item ?"
+      confirm="Yes"
+      confirmColor="primary"
+      cancel="Cancel"
+    />
+    {' '}
+    <DeleteButton undoable={false} />
   </Toolbar>
 );
 

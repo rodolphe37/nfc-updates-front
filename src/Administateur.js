@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {
-  Admin, Resource, Login, fetchUtils,
+  Admin, Resource, Login, fetchUtils, Confirm, DeleteButton,
 } from 'react-admin';
 import jsonServerProvider from 'ra-data-json-server';
 import UserIcon from '@material-ui/icons/Group';
@@ -10,7 +10,7 @@ import { UsersList, UserCreate } from './components/users';
 import Dashboard from './components/dashboard/Dashboard';
 import authProvider from './components/authProvider';
 import PersistentDrawerRight from './components/PersistentDrawerRight';
-import DeleteButtonConfirm from './components/DeleteButtonConfim';
+// import DeleteButtonConfirm from './components/DeleteButtonConfim';
 import NotFound from './components/NotFound';
 import Img1 from './assets/img/secure.jpg';
 
@@ -60,7 +60,6 @@ function Administrateur() {
         aria-label="Change-themes"
       />
       <Resource
-        remove={DeleteButtonConfirm}
         name="users"
         list={UsersList}
         edit={PersistentDrawerRight}

@@ -3,9 +3,9 @@ import { useMediaQuery } from '@material-ui/core';
 import {
   List, SimpleList, Datagrid,
   TextField, EditButton,
-  SimpleForm, TextInput, Create, Pagination,
+  SimpleForm, TextInput, Create, Pagination, Confirm, DeleteButton,
 } from 'react-admin';
-import DeleteButtonConfirm from './DeleteButtonConfim';
+// import DeleteButtonConfirm from './DeleteButtonConfim';
 
 
 const UsersPagination = (props) => (
@@ -22,10 +22,22 @@ export const UserTitle = ({ record }) => (
   </span>
 );
 
-export const UsersList = (props) => {
+export const UsersList = (props, name) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
-    <List {...props} pagination={<UsersPagination />} delete={<DeleteButtonConfirm />}>
+    <List
+      {...props}
+      pagination={<UsersPagination />}
+      delete={(
+        <Confirm
+          title="Delete Item"
+          content="Are you sure you want to delete this item ?"
+          confirm="Yes"
+          confirmColor="primary"
+          cancel="Cancel"
+        />
+      )}
+    >
       {isSmall
         ? (
           <SimpleList
@@ -41,7 +53,7 @@ export const UsersList = (props) => {
             <TextField source="phone" />
             <TextField source="company" />
             <EditButton style={{ color: 'grey' }} />
-            <DeleteButtonConfirm />
+            <DeleteButton undoable={false} />
           </Datagrid>
         )}
     </List>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import compose from 'recompose/compose';
 import { withStyles } from '@material-ui/core/styles';
 import { fade } from '@material-ui/core/styles/colorManipulator';
@@ -30,6 +31,7 @@ const styles = (theme) => ({
   },
 });
 
+
 const DeleteButtonConfirm = (props) => {
   const [showDialog, setShowDialog, showOptions, setShowOptions] = React.useState(false);
   const [value, setValue, responseName, setResponseName] = React.useState('');
@@ -37,27 +39,36 @@ const DeleteButtonConfirm = (props) => {
 
 
   const handleClick = () => {
-    setShowDialog(true);
+    setShowDialog(!false);
   };
 
+  const handleCloseClick = () => ((
+    setShowDialog(!true),
+    setShowOptions(!true)
+  ));
 
-  const handleCloseClick = () => (
-    setShowDialog(false),
-    setShowOptions(false)
-  );
-
-  function handleSubmit(event) {
-    event.preventDefault(false);
-  }
-
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setShowDialog(!true);
+    const {
+      dispatchCrudDelete, resource, record, basePath, redirect, undoable,
+    } = props;
+    if (undoable && value !== record.name) {
+      setShowOptions(true);
+      setResponseName("You have entered the wrong name, the user hasn't been deleted.");
+    } if (value === record.name) {
+      setShowOptions(true);
+      setResponseName('Ok');
+      return dispatchCrudDelete(resource, record.id, record, basePath, redirect);
+    }
+  };
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
-
   return (
     <div>
-      <Dialog fullWidth open={showOptions} onClose={() => handleCloseClick}>
+      <Dialog fullWidth open={showOptions} onClose={handleCloseClick}>
         <DialogTitle>Delete confirmation</DialogTitle>
         <DialogContent>
           {setResponseName}
@@ -79,8 +90,8 @@ const DeleteButtonConfirm = (props) => {
           </div>
         </DialogContent>
         <DialogActions>
-          <form onSubmit={() => handleSubmit}>
-            <Input className="Form-input_Submit" value={setValue} onChange={handleChange} />
+          <form onSubmit={handleSubmit}>
+            <Input className="Form-input_Submit" value={value} onChange={handleChange} />
             <Button onClick={handleSubmit} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button" />
           </form>
           <Button label="ra.action.cancel" onClick={handleCloseClick}>
@@ -90,6 +101,26 @@ const DeleteButtonConfirm = (props) => {
       </Dialog>
     </div>
   );
+};
+
+
+DeleteButtonConfirm.propTypes = {
+  // basePath: PropTypes.string,
+  // classes: PropTypes.object,
+  // className: PropTypes.string,
+  dispatchCrudDelete: PropTypes.func.isRequired,
+  // label: PropTypes.string,
+  // record: PropTypes.object,
+  redirect: PropTypes.oneOfType([PropTypes.string, PropTypes.bool, PropTypes.func]),
+  resource: PropTypes.string.isRequired,
+  // startUndoable: PropTypes.func,
+  // translate: PropTypes.func,
+  undoable: PropTypes.bool,
+};
+
+DeleteButtonConfirm.defaultProps = {
+  redirect: 'list',
+  undoable: true,
 };
 
 export default compose(
