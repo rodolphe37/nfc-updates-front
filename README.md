@@ -15,10 +15,6 @@
 
 -  [Movie](#movie-demo)
 
-[Tech Stack](#tech-stack)
-
-[Dev dependencies](#Dev-dependencies)
-
 [Current components on this template](#Current-components-on-this-template)
 
 [Author](#author)
