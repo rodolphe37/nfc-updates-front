@@ -54,8 +54,6 @@ git clone git@github.com:WildCodeSchool/nfc-updates-front.git
 
 $ cd nfc-updates-front
 
-$ echo REACT_APP_API_URL=http://localhost:5000 >> .env.local
-
 $ cd client
 
 $ npm i or $ npm install
