@@ -2,9 +2,8 @@ import React from 'react';
 import {
   SimpleForm, TextInput, Edit, SaveButton, Toolbar, Confirm, DeleteButton,
 } from 'react-admin';
-import ModalPage from './ModalPage';
+import ModalPage from './PasswordConfirmationModal';
 import { UserTitle } from './users';
-// import DeleteButtonConfirm from './DeleteButtonConfim';
 
 const UsersEditToolbar = (props) => (
   <Toolbar {...props}>

@@ -5,7 +5,6 @@ import {
   TextField, EditButton,
   SimpleForm, TextInput, Create, Pagination, Confirm, DeleteButton,
 } from 'react-admin';
-// import DeleteButtonConfirm from './DeleteButtonConfim';
 
 
 const UsersPagination = (props) => (
@@ -22,7 +21,7 @@ export const UserTitle = ({ record }) => (
   </span>
 );
 
-export const UsersList = (props, name) => {
+export const UsersList = (props) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
     <List
@@ -31,7 +30,7 @@ export const UsersList = (props, name) => {
       delete={(
         <Confirm
           title="Delete Item"
-          content="Are you sure you want to delete this item ?"
+          content="Are you sure you want to delete this item?"
           confirm="Yes"
           confirmColor="primary"
           cancel="Cancel"
