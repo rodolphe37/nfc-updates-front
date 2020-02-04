@@ -30,10 +30,9 @@ const styles = (theme) => ({
   },
 });
 
-
 const DeleteButtonConfirm = (props) => {
   const [showDialog, setShowDialog, showOptions, setShowOptions] = React.useState(false);
-  const [value, setValue, responseName, setResponseName] = React.useState(false);
+  const [value, setValue, responseName, setResponseName] = React.useState('');
   const { label = 'ra.action.delete', classes = {}, className } = props;
 
 
@@ -41,21 +40,24 @@ const DeleteButtonConfirm = (props) => {
     setShowDialog(true);
   };
 
-  const handleCloseClick = () => ((
+
+  const handleCloseClick = () => (
     setShowDialog(false),
     setShowOptions(false)
-  ));
-
-  const handleSubmit = (event) => (
-    event.preventDefault(false)
   );
+
+  function handleSubmit(event) {
+    event.preventDefault(false);
+  }
+
 
   const handleChange = (event) => {
     setValue(event.target.value);
   };
+
   return (
     <div>
-      <Dialog fullWidth open={showOptions} onClose={handleCloseClick}>
+      <Dialog fullWidth open={showOptions} onClose={() => handleCloseClick}>
         <DialogTitle>Delete confirmation</DialogTitle>
         <DialogContent>
           {setResponseName}
@@ -77,7 +79,7 @@ const DeleteButtonConfirm = (props) => {
           </div>
         </DialogContent>
         <DialogActions>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={() => handleSubmit}>
             <Input className="Form-input_Submit" value={setValue} onChange={handleChange} />
             <Button onClick={handleSubmit} label={label} className={classnames('ra-delete-button', classes.deleteButton, className)} key="button" />
           </form>
