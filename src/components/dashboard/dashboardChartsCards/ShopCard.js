@@ -26,7 +26,7 @@ const Card2 = () => {
         <CardIcon color="info">
           <Store />
         </CardIcon>
-        <p className={classes.cardCategory}>Revenue</p>
+        <p className={classes.cardCategory}>income</p>
         <h3 className={classes.cardTitle}>$34,245</h3>
         <Bar
           data={chartData3}

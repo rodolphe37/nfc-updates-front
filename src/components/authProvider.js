@@ -7,8 +7,6 @@ import {
 } from 'react-admin';
 
 
-// eslint-disable-line import/no-unresolved
-
 // Authenticatd by default
 export default (type, params) => {
   if (type === AUTH_LOGIN) {
@@ -51,5 +49,10 @@ export default (type, params) => {
     const role = localStorage.getItem('role');
     return Promise.resolve(role);
   }
-  return Promise.reject('Unknown method');
+  if (type !== AUTH_GET_PERMISSIONS) {
+    return localStorage.getItem('not_authenticated')
+      ? Promise.reject()
+      : Promise.resolve();
+  }
+  return Promise.reject();
 };
