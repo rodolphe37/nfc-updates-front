@@ -21,7 +21,7 @@ export const UserTitle = ({ record }) => (
   </span>
 );
 
-export const UsersList = (props) => {
+export const UsersList = (props, handleDialogClose, handleConfirm) => {
   const isSmall = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   return (
     <List
@@ -29,6 +29,8 @@ export const UsersList = (props) => {
       pagination={<UsersPagination />}
       delete={(
         <Confirm
+          onClose={() => handleDialogClose}
+          onConfirm={() => handleConfirm}
           title="Delete Item"
           content="Are you sure you want to delete this item?"
           confirm="Yes"

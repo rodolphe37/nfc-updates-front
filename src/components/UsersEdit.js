@@ -5,10 +5,12 @@ import {
 import ModalPage from './PasswordConfirmationModal';
 import { UserTitle } from './users';
 
-const UsersEditToolbar = (props) => (
+const UsersEditToolbar = (props, handleDialogClose, handleConfirm) => (
   <Toolbar {...props}>
     <SaveButton />
     <Confirm
+      onClose={() => handleDialogClose}
+      onConfirm={() => handleConfirm}
       title="Delete Item"
       content="Are you sure you want to delete this item ?"
       confirm="Yes"
