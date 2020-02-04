@@ -15,9 +15,7 @@
 
 -  [Movie](#movie-demo)
 
-[Tech Stack](#tech-stack)
-
-[Dev dependencies](#Dev-dependencies)
+[Start Project](#Start-project)
 
 [Current components on this template](#Current-components-on-this-template)
 
@@ -25,7 +23,6 @@
 
 [License](#license)
 
-[Start Project](#Start-project)
 
 ---
 ## Demo
