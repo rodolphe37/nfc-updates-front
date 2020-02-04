@@ -14,7 +14,6 @@
 [Demo](#demo)
 
 -  [Movie](#movie-demo)
--  [Picture](#picture-demo)
 
 [Tech Stack](#tech-stack)
 
@@ -34,19 +33,6 @@
 ### Movie Demo
 
 ![!Demogif](movieDemo.gif)
-
----
-### Picture Demo
----
-#### Light Mode	
-
--  **Dashboard page**
-![DashboardLightpng](dashboard-light.png)
-
-  #### Dark Mode
-
--  **Dashboard page**
-![DashboardDarkpng](dashboard-dark.png)
 
 ---
  
