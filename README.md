@@ -49,22 +49,17 @@
 ***this administration template works with a Backend that you can download or clone at this address***
 [Backend for this administration template](https://github.com/WildCodeSchool/nfc-updates-back.git)
 ---
+```bash
+git clone git@github.com:WildCodeSchool/nfc-updates-front.git
+$ cd nfc-updates-front
+$ echo REACT_APP_API_URL=http://localhost:5000 >> .env.local
 
-- Clone or download this repo https://github.com/WildCodeSchool/nfc-updates-front.git
+$ cd client
 
-- Create ".env" file  on your app's root and name it ".env.local" : 
-- put it in this file :
--  ``` REACT_APP_API_URL=http://localhost:5000  ```  => This is a Backend localhost Url
+$ npm i or $ npm install
 
-- Do in the console :
-
--  ``` $ cd client```
-
--  ```  $ npm i``` or ``` $ npm install ```
-
-to install the dependencies and
-
--  ``` $ npm start```
+$ npm start
+```
 
 to start project.
 
