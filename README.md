@@ -47,7 +47,7 @@
 
 ### Warning ! 
 ***this administration template works with a Backend that you can download or clone at this address***
-[Backend for this administration template](https://github.com/WildCodeSchool/nfc-updates-back.git)
+[Backend for this administration template](https://github.com/rodolphe37/nfc-updates-back.git)
 ---
 ```bash
 git clone git@github.com:WildCodeSchool/nfc-updates-front.git
