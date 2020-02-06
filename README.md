@@ -54,11 +54,13 @@ Link to the demo : https://wizardly-feynman-6cec68.netlify.com/#/
 [Backend for this administration template](https://github.com/rodolphe37/nfc-updates-back.git)
 ---
 ```bash
-git clone git@github.com:WildCodeSchool/nfc-updates-front.git
+git clone https://github.com/rodolphe37/nfc-updates-front.git
 
 $ cd nfc-updates-front
 
 $ npm i or $ npm install
+
+$ npm sequelize db:migrate
 
 $ npm start
 ```
