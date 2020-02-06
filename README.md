@@ -9,7 +9,7 @@
 ---  
 
 ## Quick Links
-
+[LiveDemo](#live-demo)
 
 [Demo](#demo)
 
@@ -27,6 +27,10 @@
 ---
 ## Demo
 ---
+
+### Live Demo
+(https://wizardly-feynman-6cec68.netlify.com/#/)
+
 ### Movie Demo
 
 ![!Demogif](movieDemo.gif)
