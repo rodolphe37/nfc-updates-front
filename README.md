@@ -29,7 +29,7 @@
 ---
 
 ### Live Demo
-(https://wizardly-feynman-6cec68.netlify.com/#/)
+Link to the demo : https://wizardly-feynman-6cec68.netlify.com/#/
 
 ### Movie Demo
 
