@@ -45,7 +45,7 @@ Link to the demo : https://wizardly-feynman-6cec68.netlify.com/#/
  **Version of Node js**
 -    v8.16.2 minimun
 
- **To login the default username and password is:
+ **To login the default username and password is**
  username : admin
  password : password
 
