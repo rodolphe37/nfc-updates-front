@@ -64,8 +64,6 @@ $ cd nfc-updates-front
 
 $ npm i or $ npm install
 
-$ npm sequelize db:migrate
-
 $ npm start
 ```
 
